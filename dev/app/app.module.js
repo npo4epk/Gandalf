@@ -6,10 +6,10 @@
         .module('gandalf', [
 
             // Third party modules.
-            'ui.router'
+            'ui.router',
 
             // Custom modules.
-
+            'gandalf.sign'
         ]);
 
 })();

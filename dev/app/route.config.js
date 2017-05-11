@@ -3,6 +3,15 @@
 ;(function () {
 
     angular
-        .module('gandalf');
+        .module('gandalf')
+        .config(routes);
+
+    routes.$inject = ['$urlRouterProvider'];
+
+    function routes($urlRouterProvider) {
+
+        $urlRouterProvider.otherwise("/sign/in");
+
+    }
 
 })();
