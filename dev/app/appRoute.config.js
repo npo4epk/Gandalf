@@ -4,11 +4,11 @@
 
     angular
         .module('gandalf')
-        .config(routes);
+        .config(appRoute);
 
-    routes.$inject = ['$urlRouterProvider'];
+    appRoute.$inject = ['$urlRouterProvider'];
 
-    function routes($urlRouterProvider) {
+    function appRoute($urlRouterProvider) {
 
         $urlRouterProvider.otherwise("/profile/sign-in");
 
