@@ -4,4 +4,6 @@
 
 /* FONTS
  ========================= */
-//@include font-face('Montserrat-Bold', '../fonts/Montserrat/Montserrat-Bold', normal, normal, ttf);
+@include font-face('Montserrat-bold', '../fonts/Montserrat-bold/Montserrat-bold', normal, normal, eot woff2 woff ttf svg);
+@include font-face('Montserrat-regular', '../fonts/Montserrat-regular/Montserrat-regular', normal, normal, eot woff2 woff ttf svg);
+@include font-face('Montserrat-semibold', '../fonts/Montserrat-semibold/Montserrat-semibold', normal, normal, eot woff2 woff ttf svg);

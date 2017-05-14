@@ -4,10 +4,54 @@
 @import "components/_variables";
 @import "helpers/_mixins";
 
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+ui-view {
+  display: block;
+  height: 100%;
+}
+
+html {
+  font-family: $Montserrat-semibold;
+  font-size: $font-size;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  position: relative;
+  font-family: $Montserrat-semibold;
+  @include rem(fs, 14, $font-size-mixin);
+  @include rem(lh, 16, $font-size-mixin);
+  height: 100%;
+  color: $color-3d3d3d;
+  background-color: $bgc-e5e5e5;
+  overflow: hidden;
+}
+
+
+.container {
+  position: relative;
+  height: calc(100% - 30px);
+  margin: 15px;
+  border-radius: 5px;
+  background-color: $bgc-ffffff;
+  overflow: hidden;
+  box-shadow: 5px 5px 5px 0px $bs-c9c9c9;
+}
+
+
+
+
+
+
+
 /* @IMPORT MEDIA
  ========================= */
 @import "helpers/_media";
 
-/* @IMPORT ANIMATE
+/* @IMPORT PROFILE
  ========================= */
-@import "sections/_animate";
+@import "sections/_profile";

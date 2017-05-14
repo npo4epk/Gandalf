@@ -9,8 +9,8 @@
             'ui.router',
 
             // Custom modules.
-            'gandalf.profile.signIn',
-            'gandalf.profile.signUp'
+            'gandalf.profile.sign-in',
+            'gandalf.profile.sign-up'
 
         ]);
     

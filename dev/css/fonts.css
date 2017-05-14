@@ -21,3 +21,20 @@
  ========================= */
 /* FONTS
  ========================= */
+@font-face {
+  font-family: "Montserrat-bold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Montserrat-bold/Montserrat-bold.eot?") format("eot"), url("../fonts/Montserrat-bold/Montserrat-bold.woff2") format("woff2"), url("../fonts/Montserrat-bold/Montserrat-bold.woff") format("woff"), url("../fonts/Montserrat-bold/Montserrat-bold.ttf") format("truetype"), url('../fonts/Montserrat-bold/Montserrat-bold.svg#str-replace("Montserrat-bold", " ", "_")') format("svg"); }
+
+@font-face {
+  font-family: "Montserrat-regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Montserrat-regular/Montserrat-regular.eot?") format("eot"), url("../fonts/Montserrat-regular/Montserrat-regular.woff2") format("woff2"), url("../fonts/Montserrat-regular/Montserrat-regular.woff") format("woff"), url("../fonts/Montserrat-regular/Montserrat-regular.ttf") format("truetype"), url('../fonts/Montserrat-regular/Montserrat-regular.svg#str-replace("Montserrat-regular", " ", "_")') format("svg"); }
+
+@font-face {
+  font-family: "Montserrat-semibold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Montserrat-semibold/Montserrat-semibold.eot?") format("eot"), url("../fonts/Montserrat-semibold/Montserrat-semibold.woff2") format("woff2"), url("../fonts/Montserrat-semibold/Montserrat-semibold.woff") format("woff"), url("../fonts/Montserrat-semibold/Montserrat-semibold.ttf") format("truetype"), url('../fonts/Montserrat-semibold/Montserrat-semibold.svg#str-replace("Montserrat-semibold", " ", "_")') format("svg"); }

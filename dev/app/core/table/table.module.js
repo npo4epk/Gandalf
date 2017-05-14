@@ -3,15 +3,14 @@
 ;(function () {
 
     angular
-        .module('gandalf', [
+        .module('gandalf.core.table', [
 
             // Third party modules.
             'ui.router',
 
             // Custom modules.
-            'gandalf.firebase',
-            'gandalf.profile',
-            'gandalf.core'
+            'gandalf.table.create',
+            'gandalf.table.edit'
 
         ]);
 
