@@ -8,6 +8,8 @@
  ========================= */
 /* BOX-SHADOW
  ========================= */
+/* BORDER
+ ========================= */
 /* FONT-SIZE
  ========================= */
 /* MEDIA
@@ -31,7 +33,9 @@
 /* LIST-CLEAR
 	@include list-clear()
  ========================= */
-*, *:after, *:before {
+*,
+*:after,
+*:before {
   box-sizing: border-box; }
 
 ui-view {
@@ -60,12 +64,12 @@ body {
   position: relative;
   height: calc(100% - 30px);
   margin: 15px;
-  border-radius: 5px;
+  border-radius: 3px;
   background-color: #ffffff;
   overflow: hidden;
   box-shadow: 5px 5px 5px 0px #c9c9c9; }
 
-/* @IMPORT MEDIA
+/* @IMPORT SIGN-IN
  ========================= */
 /* @IMPORT
  ========================= */
@@ -77,54 +81,7 @@ body {
  ========================= */
 /* BOX-SHADOW
  ========================= */
-/* FONT-SIZE
- ========================= */
-/* MEDIA
- ========================= */
-/* FONTS-FACE
- 	@include font-face('FontAwesome', '../fonts/FontAwesome/fontawesome-webfont', normal, normal, eot woff2 woff ttf svg);
- ========================= */
-/* PX in REM
- 	@include rem(lh, 12, 16);
-	@include rem(fs, 12, 16);
- ========================= */
-/* PSEUDO
-	@include pseudo(block, absolute, ' ');
- ========================= */
-/* CLEARFIX
-	@include clearfix()
- ========================= */
-/* PLEACEHOLDER
-	@include placeholder(red, normal, none)
- ========================= */
-/* LIST-CLEAR
-	@include list-clear()
- ========================= */
-/* DESKTOP FIRST METHOD
- ========================= */
-/* Large Devices, Wide Screens */
-/* Medium Devices, Desktops */
-/* Small Devices, Tablets */
-/* Extra Small Devices, Phones */
-/* Custom, iPhone Retina */
-/* MOBILE FIRST METHODD
- ========================= */
-/* Custom, iPhone Retina */
-/* Extra Small Devices, Phones */
-/* Small Devices, Tablets */
-/* Medium Devices, Desktops */
-/* Large Devices, Wide Screens */
-/* @IMPORT PROFILE
- ========================= */
-/* @IMPORT
- ========================= */
-/* FONTS
- ========================= */
-/* COLOR
- ========================= */
-/* BACKGROUND-COLOR
- ========================= */
-/* BOX-SHADOW
+/* BORDER
  ========================= */
 /* FONT-SIZE
  ========================= */
@@ -158,6 +115,7 @@ body {
   overflow: hidden; }
 
 .sign-in-wrapper {
+  position: relative;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -170,7 +128,6 @@ body {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  position: relative;
   height: 100%;
   width: 100%;
   z-index: 1; }
@@ -179,9 +136,11 @@ body {
   display: block;
   margin-bottom: 40px; }
   .sign-in-logo__link {
+    display: block;
+    height: 80px;
     text-decoration: none !important; }
   .sign-in-logo__img {
-    height: 80px;
+    height: 100%;
     width: auto; }
 
 .sign-in-block {
@@ -193,7 +152,8 @@ body {
   text-align: center;
   margin-bottom: 30px; }
   .sign-in-title__text {
-    font-family: "Montserrat-bold", "Arial", sans-serif;
+    font-family: "Montserrat-regular", "Arial", sans-serif;
+    font-weight: 500;
     font-size: 16px;
     font-size: 1.14286rem;
     line-height: 18px;
@@ -201,35 +161,36 @@ body {
     color: #ffffff;
     margin: 0; }
 
-.sign-in-form ::-moz-placeholder {
-  color: #ffffff;
-  font-weight: 300;
-  text-transform: none; }
-
-.sign-in-form :-ms-input-placeholder {
-  color: #ffffff;
-  font-weight: 300;
-  text-transform: none; }
-
-.sign-in-form ::-webkit-input-placeholder {
-  color: #ffffff;
-  font-weight: 300;
-  text-transform: none; }
+.sign-in-form {
+  margin-bottom: 10px; }
+  .sign-in-form ::-moz-placeholder {
+    color: #ffffff;
+    font-weight: 300;
+    text-transform: none; }
+  .sign-in-form :-ms-input-placeholder {
+    color: #ffffff;
+    font-weight: 300;
+    text-transform: none; }
+  .sign-in-form ::-webkit-input-placeholder {
+    color: #ffffff;
+    font-weight: 300;
+    text-transform: none; }
 
 .sign-in-form__mail,
 .sign-in-form__password {
   font-family: "Montserrat-regular", "Arial", sans-serif;
-  line-height: 14px;
-  line-height: 1rem;
-  font-size: 16px;
-  font-size: 1.14286rem;
+  font-weight: 100;
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 15px;
+  line-height: 1.07143rem;
   display: block;
   width: 90%;
   padding: 10px;
   margin: 0 auto 10px auto;
   color: #ffffff;
   background-color: transparent;
-  border: 3px solid #fff;
+  border: 1px solid #ffffff;
   border-radius: 3px;
   transition: 0.25s;
   text-align: center;
@@ -252,8 +213,8 @@ body {
   display: block;
   width: 90%;
   padding: 10px;
-  margin: 0 auto 10px auto;
-  border: 3px solid transparent;
+  margin: 0 auto;
+  border: 1px solid #3d3d3d;
   border-radius: 3px;
   color: #ffffff;
   background-color: #3d3d3d;
@@ -262,16 +223,8 @@ body {
   outline: none;
   text-transform: uppercase; }
 
-.sign-in-form__link {
-  font-family: "Montserrat-regular", "Arial", sans-serif;
-  line-height: 16px;
-  line-height: 1.14286rem;
-  font-size: 18px;
-  font-size: 1.28571rem;
-  color: #ffffff !important; }
-
 .sign-in__text {
-  font-family: "Montserrat-bold", "Arial", sans-serif;
+  font-family: "Montserrat-regular", "Arial", sans-serif;
   font-size: 14px;
   font-size: 1rem;
   line-height: 16px;
@@ -289,6 +242,405 @@ body {
   color: #ffffff;
   margin-left: 10px; }
 
+.ng-invalid .sign-in-form__button {
+  opacity: 0.7;
+  cursor: not-allowed; }
+
+.ng-valid .sign-in-form__button:hover {
+  background-color: transparent;
+  color: #3d3d3d; }
+
+/* @IMPORT SIGN-UP
+ ========================= */
+/* @IMPORT
+ ========================= */
+/* FONTS
+ ========================= */
+/* COLOR
+ ========================= */
+/* BACKGROUND-COLOR
+ ========================= */
+/* BOX-SHADOW
+ ========================= */
+/* BORDER
+ ========================= */
+/* FONT-SIZE
+ ========================= */
+/* MEDIA
+ ========================= */
+/* FONTS-FACE
+ 	@include font-face('FontAwesome', '../fonts/FontAwesome/fontawesome-webfont', normal, normal, eot woff2 woff ttf svg);
+ ========================= */
+/* PX in REM
+ 	@include rem(lh, 12, 16);
+	@include rem(fs, 12, 16);
+ ========================= */
+/* PSEUDO
+	@include pseudo(block, absolute, ' ');
+ ========================= */
+/* CLEARFIX
+	@include clearfix()
+ ========================= */
+/* PLEACEHOLDER
+	@include placeholder(red, normal, none)
+ ========================= */
+/* LIST-CLEAR
+	@include list-clear()
+ ========================= */
+.sign-up {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: #e81a50;
+  background: linear-gradient(to top, #e81a50 0%, #3d3d3d 100%);
+  overflow: hidden; }
+
+.sign-up-wrapper {
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 100%;
+  z-index: 1; }
+
+.sign-up-logo {
+  display: block;
+  margin-bottom: 40px; }
+  .sign-up-logo__link {
+    display: block;
+    height: 80px;
+    text-decoration: none !important; }
+  .sign-up-logo__img {
+    height: 100%;
+    width: auto; }
+
+.sign-up-block {
+  width: 100%;
+  max-width: 300px;
+  padding: 0 5px; }
+
+.sign-up-title {
+  text-align: center;
+  margin-bottom: 30px; }
+  .sign-up-title__text {
+    font-family: "Montserrat-regular", "Arial", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    font-size: 1.14286rem;
+    line-height: 18px;
+    line-height: 1.28571rem;
+    color: #ffffff;
+    margin: 0; }
+
+.sign-up-form {
+  margin-bottom: 10px; }
+  .sign-up-form ::-moz-placeholder {
+    color: #ffffff;
+    font-weight: 300;
+    text-transform: none; }
+  .sign-up-form :-ms-input-placeholder {
+    color: #ffffff;
+    font-weight: 300;
+    text-transform: none; }
+  .sign-up-form ::-webkit-input-placeholder {
+    color: #ffffff;
+    font-weight: 300;
+    text-transform: none; }
+
+.sign-up-form__username,
+.sign-up-form__mail,
+.sign-up-form__password {
+  font-family: "Montserrat-regular", "Arial", sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 15px;
+  line-height: 1.07143rem;
+  display: block;
+  width: 90%;
+  padding: 10px;
+  margin: 0 auto 10px auto;
+  color: #ffffff;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+  transition: 0.25s;
+  text-align: center;
+  outline: none; }
+  .sign-up-form__username:focus,
+  .sign-up-form__mail:focus,
+  .sign-up-form__password:focus {
+    width: 100%;
+    color: #ffffff; }
+  .sign-up-form__username :-webkit-autofill,
+  .sign-up-form__mail :-webkit-autofill,
+  .sign-up-form__password :-webkit-autofill {
+    color: #ffffff !important;
+    text-fill-color: #ffffff !important; }
+
+.sign-up-form__button {
+  font-family: "Montserrat-regular", "Arial", sans-serif;
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 16px;
+  line-height: 1.14286rem;
+  display: block;
+  width: 90%;
+  padding: 10px;
+  margin: 0 auto;
+  border: 1px solid #3d3d3d;
+  border-radius: 3px;
+  color: #ffffff;
+  background-color: #3d3d3d;
+  transition: 0.25s;
+  text-align: center;
+  outline: none;
+  text-transform: uppercase; }
+
+.sign-up__text {
+  font-family: "Montserrat-regular", "Arial", sans-serif;
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 16px;
+  line-height: 1.14286rem;
+  color: #3d3d3d;
+  margin: 0;
+  text-align: center; }
+
+.sign-up__link {
+  font-family: "Montserrat-bold", "Arial", sans-serif;
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 16px;
+  line-height: 1.14286rem;
+  color: #ffffff;
+  margin-left: 10px; }
+
+.ng-invalid .sign-up-form__button {
+  opacity: 0.7;
+  cursor: not-allowed; }
+
+.ng-valid .sign-up-form__button:hover {
+  background-color: transparent;
+  color: #3d3d3d; }
+
+/* @IMPORT PROJECT CREATE
+ ========================= */
+/* @IMPORT
+ ========================= */
+/* FONTS
+ ========================= */
+/* COLOR
+ ========================= */
+/* BACKGROUND-COLOR
+ ========================= */
+/* BOX-SHADOW
+ ========================= */
+/* BORDER
+ ========================= */
+/* FONT-SIZE
+ ========================= */
+/* MEDIA
+ ========================= */
+/* FONTS-FACE
+ 	@include font-face('FontAwesome', '../fonts/FontAwesome/fontawesome-webfont', normal, normal, eot woff2 woff ttf svg);
+ ========================= */
+/* PX in REM
+ 	@include rem(lh, 12, 16);
+	@include rem(fs, 12, 16);
+ ========================= */
+/* PSEUDO
+	@include pseudo(block, absolute, ' ');
+ ========================= */
+/* CLEARFIX
+	@include clearfix()
+ ========================= */
+/* PLEACEHOLDER
+	@include placeholder(red, normal, none)
+ ========================= */
+/* LIST-CLEAR
+	@include list-clear()
+ ========================= */
+.project-create {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  overflow: hidden; }
+
+.project-create-wrapper {
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 100%; }
+
+.project-create-logo {
+  display: block;
+  margin-bottom: 30px; }
+  .project-create-logo__link {
+    display: block;
+    height: 80px;
+    text-decoration: none !important; }
+  .project-create-logo__img {
+    height: 100%;
+    width: auto; }
+
+.project-create-block {
+  width: 100%;
+  max-width: 600px;
+  padding: 60px 0;
+  border-radius: 3px;
+  box-shadow: 0px 0px 5px 0px #c9c9c9; }
+
+.project-create-title {
+  text-align: center;
+  margin-bottom: 30px; }
+  .project-create-title__text {
+    font-family: "Montserrat-regular", "Arial", sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    font-size: 1.57143rem;
+    line-height: 24px;
+    line-height: 1.71429rem;
+    color: #3d3d3d;
+    margin: 0 0 20px 0; }
+  .project-create-title__description {
+    font-family: "Montserrat-regular", "Arial", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    font-size: 1rem;
+    line-height: 16px;
+    line-height: 1.14286rem;
+    margin: 0; }
+
+.project-create-form ::-moz-placeholder {
+  color: #cccccc;
+  font-weight: 300;
+  text-transform: none; }
+
+.project-create-form :-ms-input-placeholder {
+  color: #cccccc;
+  font-weight: 300;
+  text-transform: none; }
+
+.project-create-form ::-webkit-input-placeholder {
+  color: #cccccc;
+  font-weight: 300;
+  text-transform: none; }
+
+.project-create-form__title,
+.project-create-form__description {
+  font-family: "Montserrat-regular", "Arial", sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 15px;
+  line-height: 1.07143rem;
+  display: block;
+  width: 80%;
+  padding: 10px;
+  margin: 0 auto 10px auto;
+  color: #3d3d3d;
+  background-color: transparent;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  transition: 0.25s;
+  text-align: center;
+  outline: none; }
+  .project-create-form__title:focus,
+  .project-create-form__description:focus {
+    width: 95%;
+    color: #3d3d3d; }
+  .project-create-form__title :-webkit-autofill,
+  .project-create-form__description :-webkit-autofill {
+    color: #3d3d3d !important;
+    text-fill-color: #3d3d3d !important; }
+
+.project-create-form__button {
+  font-family: "Montserrat-regular", "Arial", sans-serif;
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 16px;
+  line-height: 1.14286rem;
+  display: block;
+  width: 80%;
+  padding: 10px;
+  margin: 0 auto;
+  border: 1px solid #e81a50;
+  border-radius: 3px;
+  color: #ffffff;
+  background-color: #e81a50;
+  transition: 0.25s;
+  text-align: center;
+  outline: none;
+  text-transform: uppercase; }
+
+.ng-invalid .project-create-form__button {
+  opacity: 0.7;
+  cursor: not-allowed; }
+
+.ng-valid .project-create-form__button:hover {
+  background-color: transparent;
+  color: #3d3d3d; }
+
+/* @IMPORT BUBBLES
+ ========================= */
+/* @IMPORT
+ ========================= */
+/* FONTS
+ ========================= */
+/* COLOR
+ ========================= */
+/* BACKGROUND-COLOR
+ ========================= */
+/* BOX-SHADOW
+ ========================= */
+/* BORDER
+ ========================= */
+/* FONT-SIZE
+ ========================= */
+/* MEDIA
+ ========================= */
+/* FONTS-FACE
+ 	@include font-face('FontAwesome', '../fonts/FontAwesome/fontawesome-webfont', normal, normal, eot woff2 woff ttf svg);
+ ========================= */
+/* PX in REM
+ 	@include rem(lh, 12, 16);
+	@include rem(fs, 12, 16);
+ ========================= */
+/* PSEUDO
+	@include pseudo(block, absolute, ' ');
+ ========================= */
+/* CLEARFIX
+	@include clearfix()
+ ========================= */
+/* PLEACEHOLDER
+	@include placeholder(red, normal, none)
+ ========================= */
+/* LIST-CLEAR
+	@include list-clear()
+ ========================= */
 .bubbles {
   position: absolute;
   top: 0;
@@ -383,3 +735,55 @@ body {
   100% {
     -webkit-transform: translateY(-1500px) rotate(600deg);
             transform: translateY(-1500px) rotate(600deg); } }
+
+/* @IMPORT MEDIA
+ ========================= */
+/* @IMPORT
+ ========================= */
+/* FONTS
+ ========================= */
+/* COLOR
+ ========================= */
+/* BACKGROUND-COLOR
+ ========================= */
+/* BOX-SHADOW
+ ========================= */
+/* BORDER
+ ========================= */
+/* FONT-SIZE
+ ========================= */
+/* MEDIA
+ ========================= */
+/* FONTS-FACE
+ 	@include font-face('FontAwesome', '../fonts/FontAwesome/fontawesome-webfont', normal, normal, eot woff2 woff ttf svg);
+ ========================= */
+/* PX in REM
+ 	@include rem(lh, 12, 16);
+	@include rem(fs, 12, 16);
+ ========================= */
+/* PSEUDO
+	@include pseudo(block, absolute, ' ');
+ ========================= */
+/* CLEARFIX
+	@include clearfix()
+ ========================= */
+/* PLEACEHOLDER
+	@include placeholder(red, normal, none)
+ ========================= */
+/* LIST-CLEAR
+	@include list-clear()
+ ========================= */
+/* DESKTOP FIRST METHOD
+ ========================= */
+/* Large Devices, Wide Screens */
+/* Medium Devices, Desktops */
+/* Small Devices, Tablets */
+/* Extra Small Devices, Phones */
+/* Custom, iPhone Retina */
+/* MOBILE FIRST METHODD
+ ========================= */
+/* Custom, iPhone Retina */
+/* Extra Small Devices, Phones */
+/* Small Devices, Tablets */
+/* Medium Devices, Desktops */
+/* Large Devices, Wide Screens */

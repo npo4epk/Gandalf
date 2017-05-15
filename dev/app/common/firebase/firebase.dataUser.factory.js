@@ -11,27 +11,31 @@
     function dataUser(firebase, $firebaseArray) {
 
         var _ref = firebase.database().ref(),
-            _refArr = $firebaseArray(ref),
-            _userRef = ref.child('Profiles'),
-            _userArr = $firebaseArray(userRef);
+            _userRef = _ref.child('Profiles'),
+            _userArr = $firebaseArray(_userRef);
 
         return  {
             userRef: _userRef,
             userArr: _userArr,
-            getUser: _getUser,
-            addUser: _addUser
+            getProfile: _getProfile,
+            addUser: _addProfile
         };
 
-        function _getUser() {
+        function _getProfile(userDataId) {
+            return _userArr.$getRecord(userDataId);
+        }
+
+        function _getAllProfiles() {
             return _userArr.$loaded();
         };
 
-        function _addUser() {
-            return _userArr.$add({
-
-            });
+        function _addProfile(user) {
+            return _userArr.$add(user);
         };
 
+        function _eidtProfiles() {
+
+        }
 
 
     };

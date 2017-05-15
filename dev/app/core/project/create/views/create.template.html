@@ -1,7 +1,33 @@
-<form action="">
-    <input type="email" placeholder="Project title">
-    <br>
-    <input type="password" placeholder="Project description">
-    <br>
-    <input type="submit" value="Create">
-</form>
+
+<div class="project-create">
+    <div class="project-create-wrapper">
+        <div class="project-create-logo">
+            <a href="/" class="project-create-logo__link">
+                <img src="img/logo.svg" alt="logo" class="project-create-logo__img">
+            </a>
+        </div>
+        <div class="project-create-block">
+            <div class="project-create-title">
+                <h1 class="project-create-title__text">Create new project</h1>
+                <p class="project-create-title__description">It's time to create project</p>
+            </div>
+            <form class="project-create-form" name="projectCreateForm">
+                <input class="project-create-form__title"
+                       ng-model="$ctrl.project.title"
+                       type="text"
+                       placeholder="Project title"
+                       required="required">
+                <input class="project-create-form__description"
+                       ng-model="$ctrl.project.description"
+                       type="text"
+                       placeholder="Project description"
+                       required="required">
+                <input
+                        class="project-create-form__button"
+                        ng-disabled="projectCreateForm.$invalid"
+                        type="submit"
+                        value="Create">
+            </form>
+        </div>
+    </div>
+</div>

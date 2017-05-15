@@ -1,10 +1,37 @@
-<form action="">
-    <input type="text" placeholder="Username">
-    <br>
-    <input type="email" placeholder="E-mail">
-    <br>
-    <input type="password" placeholder="Password">
-    <br>
-    <input type="submit" value="Create account">
-</form>
-<p>Already have an account?<a ui-sref="profile.sign-in" href="">Sign In</a></p>
+<div class="sign-up">
+    <div class="sign-up-wrapper">
+        <div class="sign-up-logo">
+            <a href="/" class="sign-up-logo__link">
+                <img src="img/logo.svg" alt="logo" class="sign-up-logo__img">
+            </a>
+        </div>
+        <div class="sign-up-block">
+            <div class="sign-up-title">
+                <h1 class="sign-up-title__text">Sing Up</h1>
+            </div>
+            <form class="sign-up-form" name="signUpForm">
+                <input class="sign-up-form__username"
+                       ng-model="$ctrl.user.username"
+                       type="text"
+                       placeholder="Username"
+                       required="required">
+                <input class="sign-up-form__mail"
+                       ng-model="$ctrl.user.email"
+                       type="email"
+                       placeholder="E-mail"
+                       required="required">
+                <input class="sign-up-form__password"
+                       ng-model="$ctrl.user.password"
+                       type="password"
+                       placeholder="Password"
+                       required="required">
+                <input
+                        class="sign-up-form__button"
+                        ng-disabled="signUpForm.$invalid"
+                        type="submit"
+                        value="Create account">
+            </form>
+            <p class="sign-up__text">Already have an account?<a class="sign-up__link" ui-sref="profile.sign-in" href="">Sign In</a></p>
+        </div>
+    </div>
+</div>
