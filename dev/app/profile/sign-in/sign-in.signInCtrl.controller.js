@@ -6,40 +6,39 @@
         .module('gandalf.profile.sign-in')
         .controller('signInCtrl', signInCtrl);
 
-    signInCtrl.$inject = ['$state', 'dataUser'];
+    signInCtrl.$inject = ['$state', '$sessionStorage', 'profileAuthService', 'profileDataService'];
 
-    function signInCtrl($state, dataUser) {
+    function signInCtrl($state, $sessionStorage, profileAuthService, profileDataService) {
 
-      console.log('Sign-in');
+        var self = this;
 
-      var self = this;
+        self.profile = {};
+        self.signIn = _signIn;
 
-      self.sub = function () {
+        function _signIn(profile) {
+            profileAuthService.signIn(profile)
+                .then(function (token) {
+                    $sessionStorage.authId = token.uid;
+                    $sessionStorage.dataId = '';
 
-          // dataBase.getProject().then(function (e) {
-          //     var a = e;
-          //     var arr = [];
-          //     for (var i = 0; a.length > i; i++) {
-          //       if ( a[i].Info.userId === 'YbeekrrG8bhK5pJkw5Pm8fOg7ab2') {
-          //           arr.push(a[i]);
-          //       }
-          //     };
-          //
-          //     debugger
-          //
-          // });
+                    var listDataProfile = profileDataService.userArr;
 
-          // dataUser.getProfile('KjSjklmp4Zpa1q28XHB').then(function (e) {
-          //     debugger;
-          // });
+                    for (var i = 0; listDataProfile.length > i; i++) {
+                        if (listDataProfile[i].authId === $sessionStorage.authId) {
+                            $sessionStorage.dataId = listDataProfile[i].$id;
+                        }
+                    };
 
-          var a = dataUser.getProfile('-KjSjklmp4Zpa1q28XHB');
-          debugger;
+                    $state.go('project.project-id.tables', {projectId: 1});
 
+                })
+                .catch(function (error) {
+                    //TODO
+                    debugger;
+                });
+        }
 
-      }
-
-    };
+    }
     
 })();
 

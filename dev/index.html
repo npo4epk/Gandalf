@@ -48,6 +48,7 @@
 
 		<script type="text/javascript" src="bower_components/angular/angular.js"></script>
 		<script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+		<script type="text/javascript" src="bower_components/ngstorage/ngStorage.js"></script>
 
 		<script type="text/javascript" src="bower_components/firebase/firebase.js"></script>
 		<script type="text/javascript" src="bower_components/angularfire/dist/angularfire.js"></script>
@@ -61,17 +62,19 @@
 		<!-- gandalf -->
 		<script type="text/javascript" src="app/app.module.js"></script>
 		<script type="text/javascript" src="app/app.route.config.js"></script>
+		<script type="text/javascript" src="app/app.stateChange.run.js"></script>
 
 		<!-- gandalf.firebase -->
 		<script type="text/javascript" src="app/common/firebase/firebase.module.js"></script>
-		<script type="text/javascript" src="app/common/firebase/firebase.initialize.config.js"></script>
-		<script type="text/javascript" src="app/common/firebase/firebase.authUser.factory.js"></script>
-		<script type="text/javascript" src="app/common/firebase/firebase.dataUser.factory.js"></script>
-		<script type="text/javascript" src="app/common/firebase/firebase.dataBase.factory.js"></script>
+		<script type="text/javascript" src="app/common/firebase/firebase.initializeService.config.js"></script>
+		<script type="text/javascript" src="app/common/firebase/firebase.profileAuthService.factory.js"></script>
+		<script type="text/javascript" src="app/common/firebase/firebase.profileDataService.factory.js"></script>
+		<script type="text/javascript" src="app/common/firebase/firebase.dataBaseService.factory.js"></script>
 
 		<!-- gandalf.profile -->
 		<script type="text/javascript" src="app/profile/profile.module.js"></script>
 		<script type="text/javascript" src="app/profile/profile.route.config.js"></script>
+		<script type="text/javascript" src="app/profile/profile.accessService.service.js"></script>
 
 		<!-- gandalf.profile.sign-in -->
 		<script type="text/javascript" src="app/profile/sign-in/sign-in.module.js"></script>

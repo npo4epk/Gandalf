@@ -5,8 +5,10 @@
     angular
         .module('gandalf.firebase', [
 
-            // Modules Firebase
+            // Modules Firebase.
             'firebase'
+
+            // Third party modules.
 
         ]);
 

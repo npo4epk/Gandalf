@@ -9,16 +9,17 @@
             <div class="sign-in-title">
                 <h1 class="sign-in-title__text">Sing In</h1>
             </div>
-            <form class="sign-in-form" name="signInForm">
-                  <!--ng-submit="signInForm.$valid && $ctrl.signIn($ctrl.user)"-->
-                  <!--novalidate="novalidate">-->
+            <form class="sign-in-form"
+                  name="signInForm"
+                  ng-submit="signInForm.$valid && $ctrl.signIn($ctrl.profile)"
+                  novalidate="novalidate">
                 <input class="sign-in-form__mail"
-                       ng-model="$ctrl.user.email"
+                       ng-model="$ctrl.profile.email"
                        type="email"
                        placeholder="E-mail"
                        required="required">
                 <input class="sign-in-form__password"
-                       ng-model="$ctrl.user.password"
+                       ng-model="$ctrl.profile.password"
                        type="password"
                        placeholder="Password"
                        required="required">
@@ -29,9 +30,6 @@
                         value="Sign In">
             </form>
             <p class="sign-in__text">Don't have an account?<a class="sign-in__link" ui-sref="profile.sign-up" href="">Sign Up</a></p>
-
-            <a href="" ng-click="$ctrl.sub()">Link</a>
-
         </div>
     </div>
 </div>

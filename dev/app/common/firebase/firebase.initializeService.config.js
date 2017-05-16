@@ -4,9 +4,9 @@
 
     angular
         .module('gandalf.firebase')
-        .config(initialize);
+        .config(initializeService);
 
-    function initialize() {
+    function initializeService() {
 
         firebase.initializeApp({
             apiKey:            'AIzaSyA-DdKJVnwgPPH5ubcnGGAkt0aiII9AWmk',

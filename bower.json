@@ -10,12 +10,11 @@
   "dependencies": {
     "angular": "^1.6.4",
     "angular-ui-router": "^0.4.2",
-
     "jquery": "~2.1.4",
     "normalize-css": "normalize.css#~3.0.3",
     "modernizer": "^2.8.2",
-
     "firebase": "^3.8.0",
-    "angularfire": "^2.3.0"
+    "angularfire": "^2.3.0",
+    "ngstorage": "^0.3.11"
   }
 }

@@ -7,6 +7,7 @@
 
             // Third party modules.
             'ui.router',
+            'ngStorage',
 
             // Custom modules.
             'gandalf.profile.sign-in',
