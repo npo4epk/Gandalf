@@ -43,6 +43,11 @@ body {
   box-shadow: 5px 5px 5px 0px $bs-c9c9c9;
 }
 
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none;
+}
+
 /* @IMPORT SIGN-IN
  ========================= */
 @import "sections/_sing-in";
@@ -50,6 +55,10 @@ body {
 /* @IMPORT SIGN-UP
  ========================= */
 @import "sections/_sing-up";
+
+/* @IMPORT THANK
+ ========================= */
+@import "sections/_thank";
 
 /* @IMPORT PROJECT CREATE
  ========================= */

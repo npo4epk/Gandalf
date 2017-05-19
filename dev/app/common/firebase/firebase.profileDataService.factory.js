@@ -16,12 +16,13 @@
 
         return  {
             userArr: _userArr,
-            getRecord: _getRecord,
+            getList: _getList,
             addRecord: _addRecord
         };
 
-        function _getRecord(profileDataId) {
-            return _userArr.$getRecord(profileDataId);
+        function _getList() {
+            debugger;
+            return _userArr.$loaded();
         };
 
         function _addRecord(profile) {

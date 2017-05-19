@@ -6,9 +6,10 @@
         .module('gandalf.project.create', [
 
             // Third party modules.
-            'ui.router'
+            'ui.router',
 
             // Custom modules.
+            'ngStorage'
 
         ]);
 

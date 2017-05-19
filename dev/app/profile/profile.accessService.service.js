@@ -11,10 +11,12 @@
     function accessService($sessionStorage, $state) {
 
         this.profileCheck = function (event, toState, toParams, fromState, fromParams) {
+            debugger;
             if (toState.data === undefined) {
-                if (!$sessionStorage.authId) {
+                debugger;
+                if (!$sessionStorage.authId ) {
                     event.preventDefault();
-                    $state.go('profile.sign-up');
+                    $state.go('profile.sign-in');
                 }
             }
         };

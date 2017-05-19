@@ -3,127 +3,243 @@
 @import "../components/_variables";
 @import "../helpers/_mixins";
 
-.project-create {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  background-color: $bgc-ffffff;
-  overflow: hidden;
-}
-
-.project-create-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-}
-
-.project-create-logo {
+project-create {
   display: block;
-  margin-bottom: 30px;
+  height: 100%;
+}
+
+
+.header {
+  height: 46px;
+  padding: 10px;
+  box-sizing: content-box;
+  border-bottom: 1px solid $bs-fafafa;
+}
+
+
+.logo {
+  float: left;
+  height: 100%;
 
   &__link {
+    position: relative;
     display: block;
-    height: 80px;
-    text-decoration: none !important;
+    height: 100%;
+  }
+
+  &__title {
+    position: absolute;
+    top: -99999px;
+    left: -99999px;
   }
 
   &__img {
+    display: block;
     height: 100%;
-    width: auto;
   }
 }
 
-.project-create-block {
-  width: 100%;
-  max-width: 600px;
-  padding: 60px 0;
-  border-radius: 3px;
-  box-shadow: 0px 0px 5px 0px $bs-c9c9c9;
-}
 
-.project-create-title {
-  text-align: center;
-  margin-bottom: 30px;
+.setting {
+  float: right;
+  height: 100%;
 
-  &__text {
-    font-family: $Montserrat-regular;
-    font-weight: 500;
-    @include rem(fs, 22, $font-size-mixin);
-    @include rem(lh, 24, $font-size-mixin);
+  &__list {
+    @include list-clear();
+    height: 100%;
+  }
+
+  &__item {
+    position: relative;
+    display: table;
+    height: 100%;
+  }
+
+  &__link {
+    position: relative;
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+    text-decoration: none !important;
+    padding-right: 10px;
     color: $color-3d3d3d;
-    margin: 0 0 20px 0;
+
+    &:after {
+      @include pseudo(block, absolute, ' ');
+      right: 0;
+      top: calc(50%);
+      border: 4px solid transparent;
+      border-top-color: $border-3d3d3d;
+      transition: 1s all;
+    }
   }
 
-  &__description {
-    font-family: $Montserrat-regular;
-    font-weight: 300;
-    @include rem(fs, 14, $font-size-mixin);
-    @include rem(lh, 16, $font-size-mixin);
+
+  &__img {
+    display: inline-block;
+    height: 20px;
+    vertical-align: sub;
+  }
+}
+
+.setting-dropdown {
+  position: absolute;
+  top: calc(100%);
+  right: 0;
+  background-color: transparent;
+  padding: 5px 0;
+  border: 1px solid rgba(0,0,0,0.15);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+  background-color: #fff;
+
+  &__list {
+    @include list-clear();
+  }
+
+  &__item {
+    position: relative;
+    display: block;
+
+    &:not(:last-child) {
+      padding-bottom: 21px;
+
+      &:after {
+        @include pseudo(block, absolute, ' ');
+        bottom: 10px;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.175);
+      }
+    }
+  }
+
+  &__name {
+    padding: 3px 20px;
     margin: 0;
   }
-}
 
-.project-create-form {
-  @include placeholder($color-cccccc, 300, none);
-}
-
-.project-create-form__title,
-.project-create-form__description {
-  font-family: $Montserrat-regular;
-  font-weight: 100;
-  @include rem(fs, 14, $font-size-mixin);
-  @include rem(lh, 15, $font-size-mixin);
-  display: block;
-  width: 80%;
-  padding: 10px;
-  margin: 0 auto 10px auto;
-  color: $color-3d3d3d;
-  background-color: transparent;
-  border: 1px solid $border-cccccc;
-  border-radius: 3px;
-  transition: 0.25s;
-  text-align: center;
-  outline: none;
-
-  &:focus {
-    width: 95%;
-    color: $color-3d3d3d;
+  &__mail {
+    padding: 3px 20px;
+    margin: 0;
   }
 
-  :-webkit-autofill {
-    color: $color-3d3d3d !important;
-    text-fill-color: $color-3d3d3d !important;
+  &__link {
+    padding: 3px 20px;
   }
+
 }
 
-.project-create-form__button {
-  font-family: $Montserrat-regular;
-  @include rem(fs, 14, $font-size-mixin);
-  @include rem(lh, 16, $font-size-mixin);
-  display: block;
-  width: 80%;
-  padding: 10px;
-  margin: 0 auto;
-  border: 1px solid $bgc-e81a50;
-  border-radius: 3px;
-  color: $color-ffffff;
-  background-color: $bgc-e81a50;
-  transition: 0.25s;
-  text-align: center;
-  outline: none;
-  text-transform: uppercase;
-}
 
-.ng-invalid .project-create-form__button {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
 
-.ng-valid .project-create-form__button:hover {
-  background-color: transparent;
-  color: $color-3d3d3d;
-}
+
+//project-create {
+//  display: block;
+//  height: 100%;
+//}
+//
+//.project-create {
+//  position: relative;
+//  height: 100%;
+//  width: 100%;
+//  background-color: $bgc-ffffff;
+//  overflow: hidden;
+//}
+//
+//.project-create-wrapper {
+//  position: relative;
+//  display: flex;
+//  align-items: center;
+//  flex-direction: column;
+//  justify-content: center;
+//  height: 100%;
+//  width: 100%;
+//}
+//
+//.project-create-block {
+//  width: 100%;
+//  max-width: 600px;
+//}
+//
+//.project-create-title {
+//  text-align: center;
+//  margin-bottom: 30px;
+//
+//  &__text {
+//    font-family: $Montserrat-regular;
+//    font-weight: 500;
+//    @include rem(fs, 22, $font-size-mixin);
+//    @include rem(lh, 24, $font-size-mixin);
+//    color: $color-3d3d3d;
+//    margin: 0 0 20px 0;
+//  }
+//
+//  &__description {
+//    font-family: $Montserrat-regular;
+//    font-weight: 300;
+//    @include rem(fs, 14, $font-size-mixin);
+//    @include rem(lh, 16, $font-size-mixin);
+//    margin: 0;
+//  }
+//}
+//
+//.project-create-form {
+//  @include placeholder($color-cccccc, 300, none);
+//}
+//
+//.project-create-form__title,
+//.project-create-form__description {
+//  font-family: $Montserrat-regular;
+//  font-weight: 100;
+//  @include rem(fs, 14, $font-size-mixin);
+//  @include rem(lh, 15, $font-size-mixin);
+//  display: block;
+//  width: 80%;
+//  padding: 10px;
+//  margin: 0 auto 10px auto;
+//  color: $color-3d3d3d;
+//  background-color: transparent;
+//  border: 1px solid $border-cccccc;
+//  border-radius: 3px;
+//  transition: 0.25s;
+//  text-align: center;
+//  outline: none;
+//
+//  &:focus {
+//    width: 95%;
+//    color: $color-3d3d3d;
+//  }
+//
+//  :-webkit-autofill {
+//    color: $color-3d3d3d !important;
+//    text-fill-color: $color-3d3d3d !important;
+//  }
+//}
+//
+//.project-create-form__button {
+//  font-family: $Montserrat-regular;
+//  @include rem(fs, 14, $font-size-mixin);
+//  @include rem(lh, 16, $font-size-mixin);
+//  display: block;
+//  width: 80%;
+//  padding: 10px;
+//  margin: 0 auto;
+//  border: 1px solid $bgc-e81a50;
+//  border-radius: 3px;
+//  color: $color-ffffff;
+//  background-color: $bgc-e81a50;
+//  transition: 0.25s;
+//  text-align: center;
+//  outline: none;
+//  text-transform: uppercase;
+//}
+//
+//.ng-invalid .project-create-form__button {
+//  opacity: 0.7;
+//  cursor: not-allowed;
+//}
+//
+//.ng-valid .project-create-form__button:hover {
+//  background-color: transparent;
+//  color: $color-3d3d3d;
+//}

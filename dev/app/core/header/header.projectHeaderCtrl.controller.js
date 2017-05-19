@@ -6,7 +6,10 @@
         .module('gandalf.core.header')
         .controller('projectHeaderCtrl', projectHeaderCtrl);
 
-    function projectHeaderCtrl() {
+    projectHeaderCtrl.$inject = ['$stateParams'];
+
+    function projectHeaderCtrl($stateParams) {
+        debugger;
         console.log('Project header');
     };
     

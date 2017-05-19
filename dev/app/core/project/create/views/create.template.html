@@ -1,11 +1,54 @@
 
-<div class="project-create">
-    <div class="project-create-wrapper">
-        <div class="project-create-logo">
-            <a href="/" class="project-create-logo__link">
-                <img src="img/logo.svg" alt="logo" class="project-create-logo__img">
+
+<div ng-show="$ctrl.profile">
+     <p>Show person's details here...</p>
+</div>
+
+<div ng-hide="$ctrl.profile" ng-cloak>
+    <p>Preloader</p>
+</div>
+
+
+<div  ng-cloak class="ng-cloak">
+    <header class="header">
+
+        <div class="logo">
+            <a href="" class="logo__link">
+                <h1 class="logo__title">Gandalf</h1>
+                <img src="img/logo.svg" alt="Gandalf" class="logo__img">
             </a>
         </div>
+
+        <div class="setting">
+            <ul class="setting__list">
+                <li class="setting__item">
+                    <a href="" class="setting__link">
+                        <img src="img/profile.png" alt="Profile" class="setting__img">
+                        <span class="setting__text" ng-bind="$ctrl.profile.profileName"></span>
+                    </a>
+                    <div class="setting-dropdown">
+                        <ul class="setting-dropdown__list">
+                            <li class="setting-dropdown__item">
+                                <p class="setting-dropdown__name">{{$ctrl.profile.profileName}}</p>
+                                <p class="setting-dropdown__mail" ng-bind="$ctrl.profile.email"></p>
+                            </li>
+                            <li class="setting-dropdown__item">
+                                <a href="" class="setting-dropdown__link">Edit profile</a>
+                            </li>
+                            <li class="setting-dropdown__item">
+                                <a href="" class="setting-dropdown__link" ng-click="$ctrl.ss()">Sign Out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </header>
+</div>
+
+<main class="project-create">
+    <div class="project-create-wrapper">
         <div class="project-create-block">
             <div class="project-create-title">
                 <h1 class="project-create-title__text">Create new project</h1>
@@ -30,4 +73,4 @@
             </form>
         </div>
     </div>
-</div>
+</main>

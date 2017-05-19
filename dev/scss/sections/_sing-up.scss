@@ -3,7 +3,7 @@
 @import "../components/_variables";
 @import "../helpers/_mixins";
 
-.sign-up {
+.profile {
     position: relative;
     height: 100%;
     width: 100%;
@@ -12,7 +12,7 @@
     overflow: hidden;
 }
 
-.sign-up-wrapper {
+.profile-wrapper {
     position: relative;
     display: flex;
     align-items: center;
@@ -23,7 +23,7 @@
     z-index: 1;
 }
 
-.sign-up-logo {
+.profile-logo {
     display: block;
     margin-bottom: 40px;
 
@@ -39,13 +39,13 @@
     }
 }
 
-.sign-up-block {
+.profile-block {
     width: 100%;
     max-width: 300px;
     padding: 0 5px;
 }
 
-.sign-up-title {
+.profile-title {
     text-align: center;
     margin-bottom: 30px;
 
@@ -59,14 +59,14 @@
     }
 }
 
-.sign-up-form {
+.profile-form {
     @include placeholder($color-ffffff, 300, none);
     margin-bottom: 10px;
 }
 
-.sign-up-form__username,
-.sign-up-form__mail,
-.sign-up-form__password {
+.profile-form__username,
+.profile-form__mail,
+.profile-form__password {
     font-family: $Montserrat-regular;
     font-weight: 100;
     @include rem(fs, 14, $font-size-mixin);
@@ -94,7 +94,7 @@
     }
 }
 
-.sign-up-form__button {
+.profile-form__button {
     font-family: $Montserrat-regular;
     @include rem(fs, 14, $font-size-mixin);
     @include rem(lh, 16, $font-size-mixin);
@@ -112,7 +112,7 @@
     text-transform: uppercase;
 }
 
-.sign-up__text {
+.profile__text {
     font-family: $Montserrat-regular;
     @include rem(fs, 14, $font-size-mixin);
     @include rem(lh, 16, $font-size-mixin);
@@ -121,7 +121,7 @@
     text-align: center;
 }
 
-.sign-up__link {
+.profile__link {
     font-family: $Montserrat-bold;
     @include rem(fs, 14, $font-size-mixin);
     @include rem(lh, 16, $font-size-mixin);
@@ -129,12 +129,12 @@
     margin-left: 10px;
 }
 
-.ng-invalid .sign-up-form__button {
+.ng-invalid .profile-form__button {
     opacity: 0.7;
     cursor: not-allowed;
 }
 
-.ng-valid .sign-up-form__button:hover {
+.ng-valid .profile-form__button:hover {
     background-color: transparent;
     color: $color-3d3d3d;
 }

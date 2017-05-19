@@ -28,33 +28,33 @@
             .state('project.project-id.tables', {
                 url: '/tables',
                 template: '<project-tables></project-tables>'
-            })
-            .state('project.project-id.setting', {
-                url: '/setting',
-                template: '<project-setting></project-setting>'
-            })
-            .state('project.project-id.history', {
-                url: '/history',
-                template: '<project-history></project-history>'
-            })
-            .state('project.project-id.table', {
-                abstract: true,
-                url: '/table',
-                template: '<ui-view></ui-view>'
-            })
-            .state('project.project-id.table.create', {
-                url: '/create',
-                template: '<table-create></table-create>'
-            })
-            .state('project.project-id.table.table-id', {
-                abstract: true,
-                url: '/:tabletId',
-                template: '<ui-view></ui-view>'
-            })
-            .state('project.project-id.table.table-id.edit', {
-                url: '/edit',
-                template: '<table-edit></table-edit>'
             });
+            // .state('project.project-id.setting', {
+            //     url: '/setting',
+            //     template: '<project-setting></project-setting>'
+            // })
+            // .state('project.project-id.history', {
+            //     url: '/history',
+            //     template: '<project-history></project-history>'
+            // })
+            // .state('project.project-id.table', {
+            //     abstract: true,
+            //     url: '/table',
+            //     template: '<ui-view></ui-view>'
+            // })
+            // .state('project.project-id.table.create', {
+            //     url: '/create',
+            //     template: '<table-create></table-create>'
+            // })
+            // .state('project.project-id.table.table-id', {
+            //     abstract: true,
+            //     url: '/:tabletId',
+            //     template: '<ui-view></ui-view>'
+            // })
+            // .state('project.project-id.table.table-id.edit', {
+            //     url: '/edit',
+            //     template: '<table-edit></table-edit>'
+            // });
 
     };
 

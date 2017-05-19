@@ -69,6 +69,9 @@ body {
   overflow: hidden;
   box-shadow: 5px 5px 5px 0px #c9c9c9; }
 
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none; }
+
 /* @IMPORT SIGN-IN
  ========================= */
 /* @IMPORT
@@ -287,7 +290,7 @@ body {
 /* LIST-CLEAR
 	@include list-clear()
  ========================= */
-.sign-up {
+.profile {
   position: relative;
   height: 100%;
   width: 100%;
@@ -295,7 +298,7 @@ body {
   background: linear-gradient(to top, #e81a50 0%, #3d3d3d 100%);
   overflow: hidden; }
 
-.sign-up-wrapper {
+.profile-wrapper {
   position: relative;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -313,26 +316,26 @@ body {
   width: 100%;
   z-index: 1; }
 
-.sign-up-logo {
+.profile-logo {
   display: block;
   margin-bottom: 40px; }
-  .sign-up-logo__link {
+  .profile-logo__link {
     display: block;
     height: 80px;
     text-decoration: none !important; }
-  .sign-up-logo__img {
+  .profile-logo__img {
     height: 100%;
     width: auto; }
 
-.sign-up-block {
+.profile-block {
   width: 100%;
   max-width: 300px;
   padding: 0 5px; }
 
-.sign-up-title {
+.profile-title {
   text-align: center;
   margin-bottom: 30px; }
-  .sign-up-title__text {
+  .profile-title__text {
     font-family: "Montserrat-regular", "Arial", sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -342,24 +345,24 @@ body {
     color: #ffffff;
     margin: 0; }
 
-.sign-up-form {
+.profile-form {
   margin-bottom: 10px; }
-  .sign-up-form ::-moz-placeholder {
+  .profile-form ::-moz-placeholder {
     color: #ffffff;
     font-weight: 300;
     text-transform: none; }
-  .sign-up-form :-ms-input-placeholder {
+  .profile-form :-ms-input-placeholder {
     color: #ffffff;
     font-weight: 300;
     text-transform: none; }
-  .sign-up-form ::-webkit-input-placeholder {
+  .profile-form ::-webkit-input-placeholder {
     color: #ffffff;
     font-weight: 300;
     text-transform: none; }
 
-.sign-up-form__username,
-.sign-up-form__mail,
-.sign-up-form__password {
+.profile-form__username,
+.profile-form__mail,
+.profile-form__password {
   font-family: "Montserrat-regular", "Arial", sans-serif;
   font-weight: 100;
   font-size: 14px;
@@ -377,18 +380,18 @@ body {
   transition: 0.25s;
   text-align: center;
   outline: none; }
-  .sign-up-form__username:focus,
-  .sign-up-form__mail:focus,
-  .sign-up-form__password:focus {
+  .profile-form__username:focus,
+  .profile-form__mail:focus,
+  .profile-form__password:focus {
     width: 100%;
     color: #ffffff; }
-  .sign-up-form__username :-webkit-autofill,
-  .sign-up-form__mail :-webkit-autofill,
-  .sign-up-form__password :-webkit-autofill {
+  .profile-form__username :-webkit-autofill,
+  .profile-form__mail :-webkit-autofill,
+  .profile-form__password :-webkit-autofill {
     color: #ffffff !important;
     text-fill-color: #ffffff !important; }
 
-.sign-up-form__button {
+.profile-form__button {
   font-family: "Montserrat-regular", "Arial", sans-serif;
   font-size: 14px;
   font-size: 1rem;
@@ -407,7 +410,7 @@ body {
   outline: none;
   text-transform: uppercase; }
 
-.sign-up__text {
+.profile__text {
   font-family: "Montserrat-regular", "Arial", sans-serif;
   font-size: 14px;
   font-size: 1rem;
@@ -417,7 +420,7 @@ body {
   margin: 0;
   text-align: center; }
 
-.sign-up__link {
+.profile__link {
   font-family: "Montserrat-bold", "Arial", sans-serif;
   font-size: 14px;
   font-size: 1rem;
@@ -426,13 +429,108 @@ body {
   color: #ffffff;
   margin-left: 10px; }
 
-.ng-invalid .sign-up-form__button {
+.ng-invalid .profile-form__button {
   opacity: 0.7;
   cursor: not-allowed; }
 
-.ng-valid .sign-up-form__button:hover {
+.ng-valid .profile-form__button:hover {
   background-color: transparent;
   color: #3d3d3d; }
+
+/* @IMPORT THANK
+ ========================= */
+/* @IMPORT
+ ========================= */
+/* FONTS
+ ========================= */
+/* COLOR
+ ========================= */
+/* BACKGROUND-COLOR
+ ========================= */
+/* BOX-SHADOW
+ ========================= */
+/* BORDER
+ ========================= */
+/* FONT-SIZE
+ ========================= */
+/* MEDIA
+ ========================= */
+/* FONTS-FACE
+ 	@include font-face('FontAwesome', '../fonts/FontAwesome/fontawesome-webfont', normal, normal, eot woff2 woff ttf svg);
+ ========================= */
+/* PX in REM
+ 	@include rem(lh, 12, 16);
+	@include rem(fs, 12, 16);
+ ========================= */
+/* PSEUDO
+	@include pseudo(block, absolute, ' ');
+ ========================= */
+/* CLEARFIX
+	@include clearfix()
+ ========================= */
+/* PLEACEHOLDER
+	@include placeholder(red, normal, none)
+ ========================= */
+/* LIST-CLEAR
+	@include list-clear()
+ ========================= */
+.thank {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: #e81a50;
+  background: linear-gradient(to top, #e81a50 0%, #3d3d3d 100%);
+  overflow: hidden; }
+
+.thank-wrapper {
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 100%;
+  z-index: 1; }
+
+.thank-logo {
+  display: block;
+  margin-bottom: 40px; }
+  .thank-logo__link {
+    display: block;
+    height: 80px;
+    text-decoration: none !important; }
+  .thank-logo__img {
+    height: 100%;
+    width: auto; }
+
+.thank-title {
+  text-align: center;
+  margin-bottom: 30px; }
+  .thank-title__text {
+    font-family: "Montserrat-bold", "Arial", sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    font-size: 2.14286rem;
+    line-height: 32px;
+    line-height: 2.28571rem;
+    color: #ffffff;
+    margin: 0 0 10px 0; }
+  .thank-title__link {
+    font-family: "Montserrat-bold", "Arial", sans-serif;
+    font-size: 14px;
+    font-size: 1rem;
+    line-height: 16px;
+    line-height: 1.14286rem;
+    color: #ffffff;
+    margin-left: 10px; }
 
 /* @IMPORT PROJECT CREATE
  ========================= */
@@ -471,138 +569,100 @@ body {
 /* LIST-CLEAR
 	@include list-clear()
  ========================= */
-.project-create {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  background-color: #ffffff;
-  overflow: hidden; }
-
-.project-create-wrapper {
-  position: relative;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 100%;
-  width: 100%; }
-
-.project-create-logo {
+project-create {
   display: block;
-  margin-bottom: 30px; }
-  .project-create-logo__link {
+  height: 100%; }
+
+.header {
+  height: 46px;
+  padding: 10px;
+  box-sizing: content-box;
+  border-bottom: 1px solid #fafafa; }
+
+.logo {
+  float: left;
+  height: 100%; }
+  .logo__link {
+    position: relative;
     display: block;
-    height: 80px;
-    text-decoration: none !important; }
-  .project-create-logo__img {
+    height: 100%; }
+  .logo__title {
+    position: absolute;
+    top: -99999px;
+    left: -99999px; }
+  .logo__img {
+    display: block;
+    height: 100%; }
+
+.setting {
+  float: right;
+  height: 100%; }
+  .setting__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    height: 100%; }
+  .setting__item {
+    position: relative;
+    display: table;
+    height: 100%; }
+  .setting__link {
+    position: relative;
+    display: table-cell;
     height: 100%;
-    width: auto; }
-
-.project-create-block {
-  width: 100%;
-  max-width: 600px;
-  padding: 60px 0;
-  border-radius: 3px;
-  box-shadow: 0px 0px 5px 0px #c9c9c9; }
-
-.project-create-title {
-  text-align: center;
-  margin-bottom: 30px; }
-  .project-create-title__text {
-    font-family: "Montserrat-regular", "Arial", sans-serif;
-    font-weight: 500;
-    font-size: 22px;
-    font-size: 1.57143rem;
-    line-height: 24px;
-    line-height: 1.71429rem;
-    color: #3d3d3d;
-    margin: 0 0 20px 0; }
-  .project-create-title__description {
-    font-family: "Montserrat-regular", "Arial", sans-serif;
-    font-weight: 300;
-    font-size: 14px;
-    font-size: 1rem;
-    line-height: 16px;
-    line-height: 1.14286rem;
-    margin: 0; }
-
-.project-create-form ::-moz-placeholder {
-  color: #cccccc;
-  font-weight: 300;
-  text-transform: none; }
-
-.project-create-form :-ms-input-placeholder {
-  color: #cccccc;
-  font-weight: 300;
-  text-transform: none; }
-
-.project-create-form ::-webkit-input-placeholder {
-  color: #cccccc;
-  font-weight: 300;
-  text-transform: none; }
-
-.project-create-form__title,
-.project-create-form__description {
-  font-family: "Montserrat-regular", "Arial", sans-serif;
-  font-weight: 100;
-  font-size: 14px;
-  font-size: 1rem;
-  line-height: 15px;
-  line-height: 1.07143rem;
-  display: block;
-  width: 80%;
-  padding: 10px;
-  margin: 0 auto 10px auto;
-  color: #3d3d3d;
-  background-color: transparent;
-  border: 1px solid #cccccc;
-  border-radius: 3px;
-  transition: 0.25s;
-  text-align: center;
-  outline: none; }
-  .project-create-form__title:focus,
-  .project-create-form__description:focus {
-    width: 95%;
+    vertical-align: middle;
+    text-decoration: none !important;
+    padding-right: 10px;
     color: #3d3d3d; }
-  .project-create-form__title :-webkit-autofill,
-  .project-create-form__description :-webkit-autofill {
-    color: #3d3d3d !important;
-    text-fill-color: #3d3d3d !important; }
+    .setting__link:after {
+      content: " ";
+      display: block;
+      position: absolute;
+      right: 0;
+      top: calc(50%);
+      border: 4px solid transparent;
+      border-top-color: #3d3d3d;
+      transition: 1s all; }
+  .setting__img {
+    display: inline-block;
+    height: 20px;
+    vertical-align: sub; }
 
-.project-create-form__button {
-  font-family: "Montserrat-regular", "Arial", sans-serif;
-  font-size: 14px;
-  font-size: 1rem;
-  line-height: 16px;
-  line-height: 1.14286rem;
-  display: block;
-  width: 80%;
-  padding: 10px;
-  margin: 0 auto;
-  border: 1px solid #e81a50;
-  border-radius: 3px;
-  color: #ffffff;
-  background-color: #e81a50;
-  transition: 0.25s;
-  text-align: center;
-  outline: none;
-  text-transform: uppercase; }
-
-.ng-invalid .project-create-form__button {
-  opacity: 0.7;
-  cursor: not-allowed; }
-
-.ng-valid .project-create-form__button:hover {
+.setting-dropdown {
+  position: absolute;
+  top: calc(100%);
+  right: 0;
   background-color: transparent;
-  color: #3d3d3d; }
+  padding: 5px 0;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-color: #fff; }
+  .setting-dropdown__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
+  .setting-dropdown__item {
+    position: relative;
+    display: block; }
+    .setting-dropdown__item:not(:last-child) {
+      padding-bottom: 21px; }
+      .setting-dropdown__item:not(:last-child):after {
+        content: " ";
+        display: block;
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.175); }
+  .setting-dropdown__name {
+    padding: 3px 20px;
+    margin: 0; }
+  .setting-dropdown__mail {
+    padding: 3px 20px;
+    margin: 0; }
+  .setting-dropdown__link {
+    padding: 3px 20px; }
 
 /* @IMPORT BUBBLES
  ========================= */
