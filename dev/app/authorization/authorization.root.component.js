@@ -3,9 +3,9 @@
 ;(function () {
 
     angular
-        .module('gandalf.profile')
+        .module('gandalf.authorization')
         .component('root', {
-            templateUrl: 'app/profile/views/root.template.html',
+            templateUrl: 'app/authorization/views/root.template.html',
             controller: 'rootCtrl'
         });
 

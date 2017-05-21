@@ -1,0 +1,50 @@
+<section class="profile">
+    <div class="profile-wrapper">
+        <div class="profile-logo">
+            <a href="/" class="profile-logo__link">
+                <img src="img/logo.svg" alt="logo" title="Gandalf" class="profile-logo__img">
+            </a>
+        </div>
+        <main class="profile-block">
+            <div class="profile-title">
+                <h1 class="profile-title__text"
+                    ng-bind="$ctrl.profile.profileTitleText">
+                </h1>
+            </div>
+            <form class="profile-form" name="signForm" novalidate="novalidate"
+                  ng-submit="signForm.$valid && $ctrl.profile.submitAction($ctrl.user)"
+                  ng-if="!$ctrl.profile.thank">
+                <div class="profile-form__wrapper"
+                     ng-if="$ctrl.profile.userName">
+                    <input class="profile-form__input" type="text" placeholder="Username" required="required"
+                           ng-model="$ctrl.user.profileName"
+                           ng-minlength="1">
+                </div>
+                <div class="profile-form__wrapper">
+                    <input class="profile-form__input" type="email" placeholder="E-mail" required="required"
+                           ng-model="$ctrl.user.email"
+                           ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,3}$/">
+                </div>
+                <div class="profile-form__wrapper">
+                    <input class="profile-form__input" type="password" placeholder="Password" required="required"
+                           ng-model="$ctrl.user.password"
+                           ng-minlength="8">
+                </div>
+                <div class="profile-form__wrapper">
+                    <input class="profile-form__button" type="submit"
+                           value="{{$ctrl.profile.inputSubmitValue}}"
+                           ng-disabled="signForm.$invalid">
+                </div>
+            </form>
+            <div class="profile-info">
+                <p class="profile-info__text"
+                   ng-bind="$ctrl.profile.profileText">
+                </p>
+                <a href="" class="profile-info__link"
+                   ui-sref="{{$ctrl.profile.profileLink}}"
+                   ng-bind="$ctrl.profile.profileLinkText">
+                </a>
+            </div>
+        </main>
+    </div>
+</section>

@@ -10,11 +10,6 @@
   box-sizing: border-box;
 }
 
-ui-view {
-  display: block;
-  height: 100%;
-}
-
 html {
   font-family: $Montserrat-semibold;
   font-size: $font-size;
@@ -43,26 +38,20 @@ body {
   box-shadow: 5px 5px 5px 0px $bs-c9c9c9;
 }
 
-
-[ng\:cloak], [ng-cloak], .ng-cloak {
-  display: none;
+div[ui-view],
+ui-view {
+  position: relative;
+  display: block;
+  height: 100%;
 }
 
-/* @IMPORT SIGN-IN
+/* @IMPORT PROFILE
  ========================= */
-@import "sections/_sing-in";
-
-/* @IMPORT SIGN-UP
- ========================= */
-@import "sections/_sing-up";
-
-/* @IMPORT THANK
- ========================= */
-@import "sections/_thank";
+@import "sections/_profile";
 
 /* @IMPORT PROJECT CREATE
  ========================= */
-@import "sections/_project-create";
+//@import "sections/_project-create";
 
 
 

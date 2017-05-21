@@ -3,24 +3,26 @@
 ;(function () {
 
     angular
-        .module('gandalf.profile')
-        .service('accessService', accessService);
+        .module('gandalf.authorization')
+        .factory('accessService', accessService);
 
     accessService.$inject = ['$sessionStorage', '$state'];
 
     function accessService($sessionStorage, $state) {
 
-        this.profileCheck = function (event, toState, toParams, fromState, fromParams) {
-            debugger;
+        return {
+            profileCheck: _profileCheck
+        };
+
+        function _profileCheck(event, toState, toParams, fromState, fromParams) {
             if (toState.data === undefined) {
-                debugger;
                 if (!$sessionStorage.authId ) {
                     event.preventDefault();
                     $state.go('profile.sign-in');
                 }
             }
-        };
+        }
 
-    };
+    }
 
 })();
