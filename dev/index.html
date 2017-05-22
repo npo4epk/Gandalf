@@ -38,10 +38,7 @@
 		  <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	    <![endif]-->
 
-		<div class="container">
-			<div ui-view></div>
-		</div>
-
+		<div ui-view></div>
 
 		<!-- build:js js/vendor.min.js -->
 		<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
@@ -58,7 +55,6 @@
 
 		<!-- build:js js/app.min.js -->
 
-
 		<!-- gandalf -->
 		<script type="text/javascript" src="app/app.module.js"></script>
 		<script type="text/javascript" src="app/app.route.config.js"></script>
@@ -71,7 +67,7 @@
 		<script type="text/javascript" src="app/common/firebase/firebase.profileDataService.factory.js"></script>
 		<script type="text/javascript" src="app/common/firebase/firebase.dataBaseService.factory.js"></script>
 
-		<!-- gandalf.profile -->
+		<!-- gandalf.authorization -->
 		<script type="text/javascript" src="app/authorization/authorization.module.js"></script>
 		<script type="text/javascript" src="app/authorization/authorization.route.config.js"></script>
 		<script type="text/javascript" src="app/authorization/authorization.accessService.service.js"></script>
@@ -80,62 +76,15 @@
 		<script type="text/javascript" src="app/authorization/authorization.root.component.js"></script>
 		<script type="text/javascript" src="app/authorization/authorization.rootCtrl.controller.js"></script>
 
-		<!-- gandalf.profile.sign-in -->
-		<!--<script type="text/javascript" src="app/profile/sign-in/sign-in.module.js"></script>-->
-		<!--<script type="text/javascript" src="app/profile/sign-in/sign-in.signIn.component.js"></script>-->
-		<!--<script type="text/javascript" src="app/profile/sign-in/sign-in.signInCtrl.controller.js"></script>-->
-
-		<!--&lt;!&ndash; gandalf.profile.sign-up &ndash;&gt;-->
-		<!--<script type="text/javascript" src="app/profile/sign-up/sign-up.module.js"></script>-->
-		<!--<script type="text/javascript" src="app/profile/sign-up/sign-up.signUp.component.js"></script>-->
-		<!--<script type="text/javascript" src="app/profile/sign-up/sign-up.signUpCtrl.controller.js"></script>-->
-		<!--<script type="text/javascript" src="app/profile/sign-up/sign-up.thank.component.js"></script>-->
-		<!--<script type="text/javascript" src="app/profile/sign-up/sign-up.thankCtrl.controller.js"></script>-->
-
 		<!-- gandalf.core -->
 		<script type="text/javascript" src="app/core/core.module.js"></script>
 		<script type="text/javascript" src="app/core/core.route.config.js"></script>
+		<script type="text/javascript" src="app/core/core.content.component.js"></script>
+		<script type="text/javascript" src="app/core/core.contentCtrl.controller.js"></script>
+		<script type="text/javascript" src="app/core/core.project.component.js"></script>
+		<script type="text/javascript" src="app/core/core.projectCtrl.controller.js"></script>
 
-		<!-- gandalf.core.project -->
-		<script type="text/javascript" src="app/core/project/project.module.js"></script>
 
-		<!-- gandalf.core.header -->
-		<script type="text/javascript" src="app/core/header/header.module.js"></script>
-		<script type="text/javascript" src="app/core/header/header.projectHeader.component.js"></script>
-		<script type="text/javascript" src="app/core/header/header.projectHeaderCtrl.controller.js"></script>
-
-		<!-- gandalf.core.project.create -->
-		<script type="text/javascript" src="app/core/project/create/create.module.js"></script>
-		<script type="text/javascript" src="app/core/project/create/create.projectCreate.component.js"></script>
-		<script type="text/javascript" src="app/core/project/create/create.projectCreateCtrl.controller.js"></script>
-
-		<!-- gandalf.core.project.tables -->
-		<script type="text/javascript" src="app/core/project/tables/tables.module.js"></script>
-		<script type="text/javascript" src="app/core/project/tables/tables.projectTables.component.js"></script>
-		<script type="text/javascript" src="app/core/project/tables/tables.projectTablesCtrl.controller.js"></script>
-
-		<!-- gandalf.core.project.setting -->
-		<script type="text/javascript" src="app/core/project/setting/setting.module.js"></script>
-		<script type="text/javascript" src="app/core/project/setting/setting.projectSetting.component.js"></script>
-		<script type="text/javascript" src="app/core/project/setting/setting.projectSettingCtrl.controller.js"></script>
-
-		<!-- gandalf.core.project.history -->
-		<script type="text/javascript" src="app/core/project/history/history.module.js"></script>
-		<script type="text/javascript" src="app/core/project/history/history.projectHistory.component.js"></script>
-		<script type="text/javascript" src="app/core/project/history/history.projectHistoryCtrl.controller.js"></script>
-
-		<!-- gandalf.core.table -->
-		<script type="text/javascript" src="app/core/table/table.module.js"></script>
-
-		<!-- gandalf.core.table.create -->
-		<script type="text/javascript" src="app/core/table/create/create.module.js"></script>
-		<script type="text/javascript" src="app/core/table/create/create.tableCreate.component.js"></script>
-		<script type="text/javascript" src="app/core/table/create/create.tableCreateCtrl.controller.js"></script>
-
-		<!-- gandalf.core.table.edit -->
-		<script type="text/javascript" src="app/core/table/edit/edit.module.js"></script>
-		<script type="text/javascript" src="app/core/table/edit/edit.tableEdit.component.js"></script>
-		<script type="text/javascript" src="app/core/table/edit/edit.tableEditCtrl.controller.js"></script>
 
 
 		<!-- endbuild -->

@@ -99,6 +99,10 @@ profile {
     color: $color-ffffff !important;
     text-fill-color: $color-ffffff !important;
   }
+
+  &--error.ng-not-empty {
+    border-color: $bgc-e81a50;
+  }
 }
 
 .profile-form__button {

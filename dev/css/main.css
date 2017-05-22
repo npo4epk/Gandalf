@@ -65,11 +65,10 @@ body {
   overflow: hidden;
   box-shadow: 5px 5px 5px 0px #c9c9c9; }
 
-div[ui-view],
-ui-view {
+ui-view,
+div[ui-view] {
   position: relative;
-  display: block;
-  height: 100%; }
+  display: block; }
 
 /* @IMPORT PROFILE
  ========================= */
@@ -209,6 +208,8 @@ profile {
   .profile-form__input :-webkit-autofill {
     color: #ffffff !important;
     text-fill-color: #ffffff !important; }
+  .profile-form__input--error.ng-not-empty {
+    border-color: #e81a50; }
 
 .profile-form__button {
   font-family: "Montserrat-regular", "Arial", sans-serif;
@@ -258,8 +259,332 @@ profile {
   background-color: transparent;
   color: #3d3d3d; }
 
-/* @IMPORT PROJECT CREATE
+/* @IMPORT HEADER
  ========================= */
+/* @IMPORT
+ ========================= */
+/* FONTS
+ ========================= */
+/* COLOR
+ ========================= */
+/* BACKGROUND-COLOR
+ ========================= */
+/* BOX-SHADOW
+ ========================= */
+/* BORDER
+ ========================= */
+/* FONT-SIZE
+ ========================= */
+/* MEDIA
+ ========================= */
+/* FONTS-FACE
+ 	@include font-face('FontAwesome', '../fonts/FontAwesome/fontawesome-webfont', normal, normal, eot woff2 woff ttf svg);
+ ========================= */
+/* PX in REM
+ 	@include rem(lh, 12, 16);
+	@include rem(fs, 12, 16);
+ ========================= */
+/* PSEUDO
+	@include pseudo(block, absolute, ' ');
+ ========================= */
+/* CLEARFIX
+	@include clearfix()
+ ========================= */
+/* PLEACEHOLDER
+	@include placeholder(red, normal, none)
+ ========================= */
+/* LIST-CLEAR
+	@include list-clear()
+ ========================= */
+content {
+  position: relative;
+  display: block;
+  height: 100%; }
+
+.header {
+  height: 60px;
+  padding: 10px 10px 0 10px;
+  box-sizing: content-box;
+  border-bottom: 1px solid #fafafa; }
+
+.logo {
+  float: left;
+  height: 100%;
+  width: 90px;
+  margin-right: 30px; }
+  .logo__link {
+    position: relative;
+    display: block;
+    height: 100%; }
+  .logo__title {
+    position: absolute;
+    top: -99999px;
+    left: -99999px; }
+  .logo__img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 46px; }
+
+.menu {
+  float: left; }
+  .menu__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
+  .menu__item {
+    display: inline-block; }
+    .menu__item:not(:last-child) {
+      margin-right: 20px; }
+  .menu__link {
+    font-family: "Montserrat-semibold", "Arial", sans-serif;
+    font-size: 13px;
+    font-size: 0.92857rem;
+    line-height: 15px;
+    line-height: 1.07143rem;
+    display: block;
+    padding: 30px 20px 13px 20px;
+    color: #777777;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    border-bottom: 2px solid transparent;
+    transition: 1s all; }
+    .menu__link.active {
+      color: #3d3d3d;
+      border-bottom-color: #e81a50; }
+    .menu__link:hover {
+      color: #3d3d3d; }
+
+.menu-dropdown {
+  display: none; }
+
+.setting {
+  float: right;
+  height: 100%; }
+  .setting__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    height: 100%; }
+  .setting__item {
+    position: relative;
+    display: table;
+    height: 100%; }
+  .setting__link {
+    position: relative;
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+    text-decoration: none !important;
+    padding-right: 10px;
+    color: #3d3d3d; }
+    .setting__link:after {
+      content: " ";
+      display: block;
+      position: absolute;
+      right: 0;
+      top: calc(50%);
+      border: 4px solid transparent;
+      border-top-color: #3d3d3d;
+      transition: 1s all; }
+  .setting__img {
+    display: inline-block;
+    height: 20px;
+    vertical-align: sub; }
+
+.setting-dropdown {
+  position: absolute;
+  top: calc(100%);
+  right: 0;
+  background-color: transparent;
+  padding: 5px 0;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-color: #fff; }
+  .setting-dropdown__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
+  .setting-dropdown__item {
+    position: relative;
+    display: block; }
+    .setting-dropdown__item:not(:last-child) {
+      padding-bottom: 21px; }
+      .setting-dropdown__item:not(:last-child):after {
+        content: " ";
+        display: block;
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.175); }
+  .setting-dropdown__name {
+    padding: 3px 20px;
+    margin: 0; }
+  .setting-dropdown__mail {
+    padding: 3px 20px;
+    margin: 0; }
+  .setting-dropdown__link {
+    padding: 3px 20px; }
+
+/* @IMPORT PROJECT-CREATE
+ ========================= */
+/* @IMPORT
+ ========================= */
+/* FONTS
+ ========================= */
+/* COLOR
+ ========================= */
+/* BACKGROUND-COLOR
+ ========================= */
+/* BOX-SHADOW
+ ========================= */
+/* BORDER
+ ========================= */
+/* FONT-SIZE
+ ========================= */
+/* MEDIA
+ ========================= */
+/* FONTS-FACE
+ 	@include font-face('FontAwesome', '../fonts/FontAwesome/fontawesome-webfont', normal, normal, eot woff2 woff ttf svg);
+ ========================= */
+/* PX in REM
+ 	@include rem(lh, 12, 16);
+	@include rem(fs, 12, 16);
+ ========================= */
+/* PSEUDO
+	@include pseudo(block, absolute, ' ');
+ ========================= */
+/* CLEARFIX
+	@include clearfix()
+ ========================= */
+/* PLEACEHOLDER
+	@include placeholder(red, normal, none)
+ ========================= */
+/* LIST-CLEAR
+	@include list-clear()
+ ========================= */
+div[ui-view].z-height,
+ui-view.z-height {
+  height: calc(100% - 71px); }
+
+project,
+.project {
+  position: relative;
+  display: block;
+  height: 100%; }
+
+.project-create {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 100%; }
+
+.project-create-title {
+  text-align: center;
+  margin-bottom: 30px; }
+  .project-create-title__text {
+    font-family: "Montserrat-regular", "Arial", sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    font-size: 1.57143rem;
+    line-height: 24px;
+    line-height: 1.71429rem;
+    margin: 0 0 10px 0; }
+  .project-create-title__description {
+    font-family: "Montserrat-regular", "Arial", sans-serif;
+    font-size: 14px;
+    font-size: 1rem;
+    line-height: 16px;
+    line-height: 1.14286rem;
+    margin: 0; }
+
+.project-form ::-moz-placeholder {
+  color: #777777;
+  font-weight: 300;
+  text-transform: none; }
+
+.project-form :-ms-input-placeholder {
+  color: #777777;
+  font-weight: 300;
+  text-transform: none; }
+
+.project-form ::-webkit-input-placeholder {
+  color: #777777;
+  font-weight: 300;
+  text-transform: none; }
+
+.project-form__wrapper {
+  width: 100%;
+  min-width: 280px; }
+
+.project-form__input {
+  font-family: "Montserrat-regular", "Arial", sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 16px;
+  line-height: 1.14286rem;
+  display: block;
+  width: 90%;
+  padding: 10px;
+  margin: 0 auto 10px auto;
+  color: #777777;
+  background-color: transparent;
+  border: 1px solid #777777;
+  border-radius: 3px;
+  transition: 0.15s;
+  text-align: center;
+  outline: none; }
+  .project-form__input:focus {
+    width: 100%;
+    color: #777777; }
+  .project-form__input :-webkit-autofill {
+    color: #777777 !important;
+    text-fill-color: #777777 !important; }
+  .project-form__input--error.ng-not-empty {
+    border-color: #e81a50; }
+
+.project-form__button {
+  font-family: "Montserrat-regular", "Arial", sans-serif;
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 16px;
+  line-height: 1.14286rem;
+  display: block;
+  width: 90%;
+  padding: 10px;
+  margin: 0 auto;
+  border: 1px solid #e81a50;
+  border-radius: 3px;
+  color: #ffffff;
+  background-color: #e81a50;
+  transition: 0.25s;
+  text-align: center;
+  outline: none;
+  text-transform: uppercase; }
+
+.ng-invalid .project-form__button {
+  opacity: 0.7;
+  cursor: not-allowed; }
+
+.ng-valid .project-form__button:hover {
+  background-color: transparent;
+  color: #3d3d3d; }
+
 /* @IMPORT BUBBLES
  ========================= */
 /* @IMPORT

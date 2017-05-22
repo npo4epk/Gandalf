@@ -12,23 +12,26 @@
                 </h1>
             </div>
             <form class="profile-form" name="signForm" novalidate="novalidate"
-                  ng-submit="signForm.$valid && $ctrl.profile.submitAction($ctrl.user)"
+                  ng-submit="signForm.$valid && $ctrl.submitForm($ctrl.user)"
                   ng-if="!$ctrl.profile.thank">
                 <div class="profile-form__wrapper"
                      ng-if="$ctrl.profile.userName">
-                    <input class="profile-form__input" type="text" placeholder="Username" required="required"
+                    <input class="profile-form__input" type="text" placeholder="Username" required="required" name="username"
                            ng-model="$ctrl.user.profileName"
-                           ng-minlength="1">
+                           ng-minlength="1"
+                           ng-class="{'profile-form__input--error':signForm.username.$invalid && !signForm.username.$pristine}">
                 </div>
                 <div class="profile-form__wrapper">
-                    <input class="profile-form__input" type="email" placeholder="E-mail" required="required"
+                    <input class="profile-form__input" type="email" placeholder="E-mail" required="required" name="email"
                            ng-model="$ctrl.user.email"
-                           ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,3}$/">
+                           ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,3}$/"
+                           ng-class="{'profile-form__input--error':signForm.email.$invalid && !signForm.email.$pristine}">
                 </div>
                 <div class="profile-form__wrapper">
-                    <input class="profile-form__input" type="password" placeholder="Password" required="required"
+                    <input class="profile-form__input" type="password" placeholder="Password" required="required" name="password"
                            ng-model="$ctrl.user.password"
-                           ng-minlength="8">
+                           ng-minlength="8"
+                           ng-class="{'profile-form__input--error':signForm.password.$invalid && !signForm.password.$pristine}">
                 </div>
                 <div class="profile-form__wrapper">
                     <input class="profile-form__button" type="submit"

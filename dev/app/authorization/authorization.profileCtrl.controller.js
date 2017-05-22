@@ -6,17 +6,14 @@
         .module('gandalf.authorization')
         .controller('profileCtrl', profileCtrl);
 
-    profileCtrl.$inject = ['$state', '$sessionStorage', 'profileAuthService', 'profileDataService'];
-
-    function profileCtrl($state, $sessionStorage, profileAuthService, profileDataService) {
+    function profileCtrl() {
 
         var self = this;
+        self.submitForm = _submitForm;
 
-        self.product = function () {
-            debugger;
-            alert('product11111');
-            self.hero();
-        };
+        function _submitForm(user) {
+            self.profile.submitAction(user);
+        }
 
     }
 

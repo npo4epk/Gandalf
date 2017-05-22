@@ -7,11 +7,9 @@
 
             // Third party modules.
             'ui.router',
+            'ngStorage'
 
             // Custom modules.
-            'gandalf.core.header',
-            'gandalf.core.project',
-            'gandalf.core.table'
 
         ]);
 

@@ -3,134 +3,116 @@
 @import "../components/_variables";
 @import "../helpers/_mixins";
 
-project-create {
+div[ui-view].z-height,
+ui-view.z-height {
+  height: calc(100% - 71px);
+}
+
+project,
+.project {
+  position: relative;
   display: block;
   height: 100%;
 }
 
-
-.header {
-  height: 46px;
-  padding: 10px;
-  box-sizing: content-box;
-  //border-bottom: 1px solid $bs-fafafa;
+.project-create {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
 }
 
+.project-create-title {
+  text-align: center;
+  margin-bottom: 30px;
 
-.logo {
-  float: left;
-  height: 100%;
-
-  &__link {
-    position: relative;
-    display: block;
-    height: 100%;
+  &__text {
+    font-family: $Montserrat-regular;
+    font-weight: 500;
+    @include rem(fs, 22, $font-size-mixin);
+    @include rem(lh, 24, $font-size-mixin);
+    margin: 0 0 10px 0;
   }
 
-  &__title {
-    position: absolute;
-    top: -99999px;
-    left: -99999px;
-  }
-
-  &__img {
-    display: block;
-    height: 100%;
+  &__description {
+    font-family: $Montserrat-regular;
+    @include rem(fs, 14, $font-size-mixin);
+    @include rem(lh, 16, $font-size-mixin);
+    margin: 0;
   }
 }
 
+.project-form {
 
-.setting {
-  float: right;
-  height: 100%;
+  @include placeholder($color-777777, 300, none);
 
-  &__list {
-    @include list-clear();
-    height: 100%;
+  &__wrapper {
+    width: 100%;
+    min-width: 280px;
   }
 
-  &__item {
-    position: relative;
-    display: table;
-    height: 100%;
-  }
+  &__input {
+    font-family: $Montserrat-regular;
+    font-weight: 100;
+    @include rem(fs, 14, $font-size-mixin);
+    @include rem(lh, 16, $font-size-mixin);
+    display: block;
+    width: 90%;
+    padding: 10px;
+    margin: 0 auto 10px auto;
+    color: $color-777777;
+    background-color: transparent;
+    border: 1px solid $border-777777;
+    border-radius: 3px;
+    transition: 0.15s;
+    text-align: center;
+    outline: none;
 
-  &__link {
-    position: relative;
-    display: table-cell;
-    height: 100%;
-    vertical-align: middle;
-    text-decoration: none !important;
-    padding-right: 10px;
-    color: $color-3d3d3d;
+    &:focus {
+      width: 100%;
+      color: $color-777777;
+    }
 
-    &:after {
-      @include pseudo(block, absolute, ' ');
-      right: 0;
-      top: calc(50%);
-      border: 4px solid transparent;
-      border-top-color: $border-3d3d3d;
-      transition: 1s all;
+    :-webkit-autofill {
+      color: $color-777777 !important;
+      text-fill-color: $color-777777 !important;
+    }
+
+    &--error.ng-not-empty {
+      border-color: $bgc-e81a50;
     }
   }
 
-
-  &__img {
-    display: inline-block;
-    height: 20px;
-    vertical-align: sub;
+  &__button {
+    font-family: $Montserrat-regular;
+    @include rem(fs, 14, $font-size-mixin);
+    @include rem(lh, 16, $font-size-mixin);
+    display: block;
+    width: 90%;
+    padding: 10px;
+    margin: 0 auto;
+    border: 1px solid $border-e81a50;
+    border-radius: 3px;
+    color: $color-ffffff;
+    background-color: $bgc-e81a50;
+    transition: 0.25s;
+    text-align: center;
+    outline: none;
+    text-transform: uppercase;
   }
 }
 
-.setting-dropdown {
-  position: absolute;
-  top: calc(100%);
-  right: 0;
+.ng-invalid .project-form__button {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.ng-valid .project-form__button:hover {
   background-color: transparent;
-  padding: 5px 0;
-  border: 1px solid rgba(0,0,0,0.15);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.175);
-  background-color: #fff;
-
-  &__list {
-    @include list-clear();
-  }
-
-  &__item {
-    position: relative;
-    display: block;
-
-    &:not(:last-child) {
-      padding-bottom: 21px;
-
-      &:after {
-        @include pseudo(block, absolute, ' ');
-        bottom: 10px;
-        left: 0;
-        height: 1px;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.175);
-      }
-    }
-  }
-
-  &__name {
-    padding: 3px 20px;
-    margin: 0;
-  }
-
-  &__mail {
-    padding: 3px 20px;
-    margin: 0;
-  }
-
-  &__link {
-    padding: 3px 20px;
-  }
-
+  color: $color-3d3d3d;
 }
-
-
 
 
 //project-create {

@@ -38,21 +38,23 @@ body {
   box-shadow: 5px 5px 5px 0px $bs-c9c9c9;
 }
 
-div[ui-view],
-ui-view {
+ui-view,
+div[ui-view]{
   position: relative;
   display: block;
-  height: 100%;
 }
 
 /* @IMPORT PROFILE
  ========================= */
 @import "sections/_profile";
 
-/* @IMPORT PROJECT CREATE
+/* @IMPORT HEADER
  ========================= */
-//@import "sections/_project-create";
+@import "sections/_header";
 
+/* @IMPORT PROJECT-CREATE
+ ========================= */
+@import "sections/_project-create";
 
 
 

@@ -14,20 +14,20 @@
             .state('project', {
                 abstract: true,
                 url: '/project',
-                template: '<ui-view></ui-view>'
-            })
-            .state('project.create', {
-                url: '/create',
-                template: '<project-create></project-create>'
+                template: '<div ui-view></div>'
             })
             .state('project.project-id', {
                 abstract: true,
                 url: '/:projectId',
-                template: '<project-header></project-header>'
+                template: '<content></content>'
+            })
+            .state('project.project-id.create', {
+                url: '/new',
+                template: '<project></project>'
             })
             .state('project.project-id.tables', {
                 url: '/tables',
-                template: '<project-tables></project-tables>'
+                template: '<p>!!!!!!!!!!!Tables project</p>'
             });
             // .state('project.project-id.setting', {
             //     url: '/setting',
