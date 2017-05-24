@@ -3,22 +3,28 @@
 @import "../components/_variables";
 @import "../helpers/_mixins";
 
-root,
-profile {
+root, profile {
   position: relative;
   display: block;
   height: 100%;
+  overflow: hidden;
+}
+
+.root-wrapper {
+  height: 100%;
+  padding: 15px;
 }
 
 .profile {
-  position: relative;
   height: 100%;
-  width: 100%;
+  border-radius: 3px;
   background: $bgc-e81a50;
   background: linear-gradient(to top, $bgc-e81a50 0%, $bgc-3d3d3d 100%);
+  box-shadow: 5px 5px 5px 0px $bs-c9c9c9;
+  overflow: auto;
 }
 
-.profile-wrapper {
+.profile-container {
   position: relative;
   display: flex;
   align-items: center;
@@ -27,6 +33,8 @@ profile {
   width: 100%;
   height: 100%;
   z-index: 1;
+  min-height: 350px;
+  min-width: 290px;
 }
 
 .profile-logo {
@@ -45,7 +53,7 @@ profile {
   }
 }
 
-.profile-block {
+.profile-wrapper {
   padding: 0 5px;
 }
 
@@ -84,7 +92,7 @@ profile {
   margin: 0 auto 10px auto;
   color: $color-ffffff;
   background-color: transparent;
-  border: 1px solid $border-ffffff;
+  border: 2px solid $border-ffffff;
   border-radius: 3px;
   transition: 0.15s;
   text-align: center;
@@ -101,7 +109,9 @@ profile {
   }
 
   &--error.ng-not-empty {
+    background-color: rgba(255, 255, 255, 0.5);
     border-color: $bgc-e81a50;
+    color: $color-e81a50;
   }
 }
 
@@ -113,7 +123,7 @@ profile {
   width: 90%;
   padding: 10px;
   margin: 0 auto;
-  border: 1px solid $border-3d3d3d;
+  border: 2px solid $border-3d3d3d;
   border-radius: 3px;
   color: $color-ffffff;
   background-color: $bgc-3d3d3d;
@@ -146,7 +156,6 @@ profile {
 }
 
 .ng-invalid .profile-form__button {
-  opacity: 0.7;
   cursor: not-allowed;
 }
 

@@ -1,0 +1,29 @@
+<main class="project-create">
+    <div class="project-create-title">
+        <h1 class="project-create-title__text">Create new project</h1>
+        <p class="project-create-title__description">It's time to create project</p>
+    </div>
+    <form class="project-form" name="projectForm" novalidate="novalidate"
+          ng-submit="projectForm.$valid && $ctrl.submitForm($ctrl.data)">
+        <div class="project-form__wrapper">
+            <input class="project-form__input" type="text" placeholder="Project title" required="required"
+                   name="projectTitle"
+                   ng-model="$ctrl.data.projectTitle"
+                   ng-minlength="3"
+                   ng-class="{'project-form__input--error':projectForm.projectTitle.$invalid && !projectForm.projectTitle.$pristine}">
+        </div>
+        <div class="project-form__wrapper">
+            <input class="project-form__input" type="text" placeholder="Project description" required="required"
+                   name="projectDescription"
+                   ng-model="$ctrl.data.projectDescription"
+                   ng-minlength="3"
+                   ng-class="{'project-form__input--error':projectForm.projectDescription.$invalid && !projectForm.projectDescription.$pristine}">
+        </div>
+        <div class="project-form__wrapper">
+            <input class="project-form__button" type="submit"
+                   value="Create"
+                   ng-disabled="projectForm.$invalid">
+        </div>
+    </form>
+</main>
+

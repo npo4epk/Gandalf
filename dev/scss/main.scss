@@ -11,8 +11,15 @@
 }
 
 html {
+  position: relative;
   font-family: $Montserrat-semibold;
   font-size: $font-size;
+  height: 100%;
+}
+
+ui-view, div[ui-view]{
+  position: relative;
+  display: block;
   height: 100%;
   overflow: hidden;
 }
@@ -25,36 +32,36 @@ body {
   height: 100%;
   color: $color-3d3d3d;
   background-color: $bgc-e5e5e5;
-  overflow: hidden;
 }
 
-.container {
+.project-wrapper {
+  height: calc(100% - 55px); //55px - height .header
+  padding: 15px;
+
+}
+
+.project-root {
   position: relative;
-  height: calc(100% - 30px);
-  margin: 15px;
+  height: 100%;
+  background: $bgc-e81a50;
+  background: linear-gradient(to top, $bgc-e81a50 0%, $bgc-3d3d3d 100%);
   border-radius: 3px;
-  background-color: $bgc-ffffff;
-  overflow: hidden;
   box-shadow: 5px 5px 5px 0px $bs-c9c9c9;
+  overflow: hidden;
 }
 
-ui-view,
-div[ui-view]{
-  position: relative;
-  display: block;
-}
 
 /* @IMPORT PROFILE
  ========================= */
 @import "sections/_profile";
 
-/* @IMPORT HEADER
+/* @IMPORT HEADER-PROJECT
  ========================= */
-@import "sections/_header";
+@import "sections/_header-project";
 
-/* @IMPORT PROJECT-CREATE
+/* @IMPORT CREATE-PROJECT
  ========================= */
-@import "sections/_project-create";
+@import "sections/_create-project";
 
 
 

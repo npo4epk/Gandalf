@@ -11,7 +11,7 @@
             // Custom modules.
             'gandalf.firebase',
             'gandalf.authorization',
-            'gandalf.core'
+            'gandalf.project'
 
         ]);
 

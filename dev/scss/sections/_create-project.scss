@@ -1,0 +1,116 @@
+/* @IMPORT
+ ========================= */
+@import "../components/_variables";
+@import "../helpers/_mixins";
+
+create-project,
+.create-project {
+  position: relative;
+  display: block;
+  height: 100%;
+  overflow: auto;
+}
+
+.project-create {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  min-height: 350px;
+}
+
+.project-create-title {
+  text-align: center;
+  margin-bottom: 30px;
+
+  &__text {
+    font-family: $Montserrat-regular;
+    font-weight: 900;
+    @include rem(fs, 32, $font-size-mixin);
+    @include rem(lh, 34, $font-size-mixin);
+    margin: 0 0 10px 0;
+    color: $color-ffffff;
+  }
+
+  &__description {
+    font-family: $Montserrat-regular;
+    font-weight: 300;
+    @include rem(fs, 18, $font-size-mixin);
+    @include rem(lh, 20, $font-size-mixin);
+    margin: 0;
+    color: $color-ffffff;
+  }
+}
+
+.project-form {
+
+  @include placeholder($color-ffffff, 300, none);
+
+  &__wrapper {
+    width: 100%;
+    min-width: 280px;
+  }
+
+  &__input {
+    font-family: $Montserrat-regular;
+    font-weight: 100;
+    @include rem(fs, 14, $font-size-mixin);
+    @include rem(lh, 16, $font-size-mixin);
+    display: block;
+    width: 90%;
+    padding: 10px;
+    margin: 0 auto 10px auto;
+    color: $color-ffffff;
+    background-color: transparent;
+    border: 2px solid $border-ffffff;
+    border-radius: 3px;
+    transition: 0.15s;
+    text-align: center;
+    outline: none;
+
+    &:focus {
+      width: 100%;
+      color: $color-ffffff;
+    }
+
+    :-webkit-autofill {
+      color: $color-ffffff !important;
+      text-fill-color: $color-ffffff !important;
+    }
+
+    &--error.ng-not-empty {
+      background-color: rgba(255, 255, 255, 0.5);
+      border-color: $bgc-e81a50;
+      color: $color-e81a50;
+    }
+  }
+
+  &__button {
+    font-family: $Montserrat-regular;
+    @include rem(fs, 14, $font-size-mixin);
+    @include rem(lh, 16, $font-size-mixin);
+    display: block;
+    width: 90%;
+    padding: 10px;
+    margin: 0 auto;
+    border: 2px solid $border-3d3d3d;
+    border-radius: 3px;
+    color: $color-ffffff;
+    background-color: $bgc-3d3d3d;
+    transition: 0.25s;
+    text-align: center;
+    outline: none;
+    text-transform: uppercase;
+  }
+}
+
+.ng-invalid .project-form__button {
+  cursor: not-allowed;
+}
+
+.ng-valid .project-form__button:hover {
+  background-color: transparent;
+  color: $color-3d3d3d;
+}

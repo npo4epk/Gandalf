@@ -3,7 +3,7 @@
 ;(function () {
 
     angular
-        .module('gandalf.core', [
+        .module('gandalf.project', [
 
             // Third party modules.
             'ui.router',

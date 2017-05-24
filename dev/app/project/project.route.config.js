@@ -3,7 +3,7 @@
 ;(function () {
 
     angular
-        .module('gandalf.core')
+        .module('gandalf.project')
         .config(route);
 
     route.$inject = ['$stateProvider'];
@@ -19,24 +19,24 @@
             .state('project.project-id', {
                 abstract: true,
                 url: '/:projectId',
-                template: '<content></content>'
+                template: '<container-project class="project-container"></container-project>'
             })
             .state('project.project-id.create', {
                 url: '/new',
-                template: '<project></project>'
+                template: '<create-project class="create-project"></create-project>'
             })
             .state('project.project-id.tables', {
                 url: '/tables',
-                template: '<p>!!!!!!!!!!!Tables project</p>'
+                template: '<p style="color: #fff;">!!!!!!!!!!!Tables project</p>'
+            })
+            .state('project.project-id.setting', {
+                url: '/setting',
+                template: '<p style="color: #fff;">!!!!!!!!!!!SETTING project</p>'
+            })
+            .state('project.project-id.history', {
+                url: '/history',
+                template: '<p style="color: #fff;">!!!!!!!!!!!HISTORY project</p>'
             });
-            // .state('project.project-id.setting', {
-            //     url: '/setting',
-            //     template: '<project-setting></project-setting>'
-            // })
-            // .state('project.project-id.history', {
-            //     url: '/history',
-            //     template: '<project-history></project-history>'
-            // })
             // .state('project.project-id.table', {
             //     abstract: true,
             //     url: '/table',

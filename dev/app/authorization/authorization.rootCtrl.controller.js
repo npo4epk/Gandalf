@@ -6,9 +6,9 @@
         .module('gandalf.authorization')
         .controller('rootCtrl', rootCtrl);
 
-    rootCtrl.$inject = ['$state', '$sessionStorage', 'profileAuthService', 'profileDataService'];
+    rootCtrl.$inject = ['$rootScope', '$state', '$sessionStorage', 'profileAuthService', 'profileDataService'];
 
-    function rootCtrl($state, $sessionStorage, profileAuthService, profileDataService) {
+    function rootCtrl($rootScope, $state, $sessionStorage, profileAuthService, profileDataService) {
 
         var self = this,
             _profileSingUp = {
@@ -66,10 +66,6 @@
                 });
         }
 
-
-
-
-
         function _SingUp(user) {
 
             profileAuthService.signUp(profile)
@@ -96,7 +92,6 @@
                 });
 
         }
-
 
     };
 
