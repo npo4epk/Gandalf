@@ -17,7 +17,6 @@ root, profile {
 
 .profile {
   height: 100%;
-  border-radius: 3px;
   background: $bgc-e81a50;
   background: linear-gradient(to top, $bgc-e81a50 0%, $bgc-3d3d3d 100%);
   box-shadow: 5px 5px 5px 0px $bs-c9c9c9;
@@ -93,7 +92,6 @@ root, profile {
   color: $color-ffffff;
   background-color: transparent;
   border: 2px solid $border-ffffff;
-  border-radius: 3px;
   transition: 0.15s;
   text-align: center;
   outline: none;
@@ -124,7 +122,6 @@ root, profile {
   padding: 10px;
   margin: 0 auto;
   border: 2px solid $border-3d3d3d;
-  border-radius: 3px;
   color: $color-ffffff;
   background-color: $bgc-3d3d3d;
   transition: 0.25s;

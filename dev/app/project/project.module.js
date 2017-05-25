@@ -7,7 +7,8 @@
 
             // Third party modules.
             'ui.router',
-            'ngStorage'
+            'ngStorage',
+            'ngDialog'
 
             // Custom modules.
 

@@ -38,6 +38,10 @@
 *:before {
   box-sizing: border-box; }
 
+a,
+button {
+  outline: none !important; }
+
 html {
   position: relative;
   font-family: "Montserrat-semibold", "Arial", sans-serif;
@@ -70,7 +74,6 @@ body {
   height: 100%;
   background: #e81a50;
   background: linear-gradient(to top, #e81a50 0%, #3d3d3d 100%);
-  border-radius: 3px;
   box-shadow: 5px 5px 5px 0px #c9c9c9;
   overflow: hidden; }
 
@@ -123,7 +126,6 @@ root, profile {
 
 .profile {
   height: 100%;
-  border-radius: 3px;
   background: #e81a50;
   background: linear-gradient(to top, #e81a50 0%, #3d3d3d 100%);
   box-shadow: 5px 5px 5px 0px #c9c9c9;
@@ -209,7 +211,6 @@ root, profile {
   color: #ffffff;
   background-color: transparent;
   border: 2px solid #ffffff;
-  border-radius: 3px;
   transition: 0.15s;
   text-align: center;
   outline: none; }
@@ -235,7 +236,6 @@ root, profile {
   padding: 10px;
   margin: 0 auto;
   border: 2px solid #3d3d3d;
-  border-radius: 3px;
   color: #ffffff;
   background-color: #3d3d3d;
   transition: 0.25s;
@@ -708,7 +708,6 @@ create-project,
   color: #ffffff;
   background-color: transparent;
   border: 2px solid #ffffff;
-  border-radius: 3px;
   transition: 0.15s;
   text-align: center;
   outline: none; }
@@ -734,7 +733,6 @@ create-project,
   padding: 10px;
   margin: 0 auto;
   border: 2px solid #3d3d3d;
-  border-radius: 3px;
   color: #ffffff;
   background-color: #3d3d3d;
   transition: 0.25s;
@@ -748,6 +746,129 @@ create-project,
 .ng-valid .project-form__button:hover {
   background-color: transparent;
   color: #3d3d3d; }
+
+/* @IMPORT EDIT-PROFILES
+ ========================= */
+/* @IMPORT
+ ========================= */
+/* FONTS
+ ========================= */
+/* COLOR
+ ========================= */
+/* BACKGROUND-COLOR
+ ========================= */
+/* BOX-SHADOW
+ ========================= */
+/* BORDER
+ ========================= */
+/* FONT-SIZE
+ ========================= */
+/* MEDIA
+ ========================= */
+/* FONTS-FACE
+ 	@include font-face('FontAwesome', '../fonts/FontAwesome/fontawesome-webfont', normal, normal, eot woff2 woff ttf svg);
+ ========================= */
+/* PX in REM
+ 	@include rem(lh, 12, 16);
+	@include rem(fs, 12, 16);
+ ========================= */
+/* PSEUDO
+	@include pseudo(block, absolute, ' ');
+ ========================= */
+/* CLEARFIX
+	@include clearfix()
+ ========================= */
+/* PLEACEHOLDER
+	@include placeholder(red, normal, none)
+ ========================= */
+/* LIST-CLEAR
+	@include list-clear()
+ ========================= */
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+  padding: 0;
+  border-radius: 0;
+  background-color: #fff; }
+
+.dialog-wrapper {
+  padding: 20px;
+  border-bottom: 1px solid #e5e5e5; }
+  .dialog-wrapper:before, .dialog-wrapper:after {
+    content: " ";
+    display: table; }
+  .dialog-wrapper:after {
+    clear: both; }
+
+.dialog-title__text {
+  font-family: "Montserrat-regular", "Arial", sans-serif;
+  font-size: 22px;
+  font-size: 1.57143rem;
+  line-height: 24px;
+  line-height: 1.71429rem;
+  font-weight: 600;
+  margin: 0; }
+
+.dialog-group-value__text {
+  padding: 6px 12px;
+  outline: none !important;
+  background-color: transparent;
+  border: 1px solid #777777; }
+
+.dialog-group {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px; }
+  .dialog-group:before, .dialog-group:after {
+    content: " ";
+    display: table; }
+  .dialog-group:after {
+    clear: both; }
+  .dialog-group-title {
+    float: left;
+    display: block;
+    width: 25%;
+    text-align: right;
+    padding-right: 15px; }
+    .dialog-group-title__text {
+      font-family: "Montserrat-regular", "Arial", sans-serif;
+      font-size: 14px;
+      font-size: 1rem;
+      line-height: 16px;
+      line-height: 1.14286rem;
+      font-weight: 900; }
+  .dialog-group-value {
+    float: right;
+    display: block;
+    width: 75%; }
+    .dialog-group-value__text {
+      width: 100%; }
+
+.dialog-button {
+  float: right; }
+  .dialog-button__btn {
+    font-family: "Montserrat-regular", "Arial", sans-serif;
+    font-size: 13px;
+    font-size: 0.92857rem;
+    line-height: 15px;
+    line-height: 1.07143rem;
+    font-weight: 100;
+    display: inline-block;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    outline: none;
+    background-color: transparent;
+    transition: 1s all; }
+    .dialog-button__btn:hover {
+      color: #ffffff; }
+    .dialog-button__btn--save {
+      color: #e81a50;
+      border: 2px solid #e81a50; }
+      .dialog-button__btn--save:hover {
+        background-color: #e81a50; }
+    .dialog-button__btn--cancel {
+      color: #3d3d3d;
+      border: 2px solid #3d3d3d; }
+      .dialog-button__btn--cancel:hover {
+        background-color: #3d3d3d; }
 
 /* @IMPORT BUBBLES
  ========================= */

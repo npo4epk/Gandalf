@@ -1,0 +1,118 @@
+/* @IMPORT
+ ========================= */
+@import "../components/_variables";
+@import "../helpers/_mixins";
+
+.ngdialog.dialog {
+
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+  padding: 0;
+  border-radius: 0;
+  background-color: #fff;
+}
+
+.dialog-wrapper {
+  padding: 20px;
+  border-bottom: 1px solid $border-e5e5e5;
+  @include clearfix();
+}
+
+
+.dialog-title {
+
+  &__text {
+    font-family: $Montserrat-regular;
+    @include rem(fs, 22, $font-size-mixin);
+    @include rem(lh, 24, $font-size-mixin);
+    font-weight: 600;
+    margin:0;
+  }
+}
+
+.dialog-group-value {
+
+  &__text {
+    padding: 6px 12px;
+    outline: none !important;
+    background-color: transparent;
+    border: 1px solid $border-777777;
+  }
+}
+
+
+
+
+
+.dialog-group {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  @include clearfix();
+
+  &-title {
+    float: left;
+    display: block;
+    width: 25%;
+    text-align: right;
+    padding-right: 15px;
+
+    &__text {
+      font-family: $Montserrat-regular;
+      @include rem(fs, 14, $font-size-mixin);
+      @include rem(lh, 16, $font-size-mixin);
+      font-weight: 900;
+    }
+  }
+
+  &-value {
+    float: right;
+    display: block;
+    width: 75%;
+
+    &__text {
+      width: 100%;
+    }
+
+  }
+}
+
+.dialog-button {
+  float: right;
+
+  &__btn {
+    font-family: $Montserrat-regular;
+    @include rem(fs, 13, $font-size-mixin);
+    @include rem(lh, 15, $font-size-mixin);
+    font-weight: 100;
+    display: inline-block;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    outline: none;
+    background-color: transparent;
+    transition: 1s all;
+
+    &:hover {
+      color: $color-ffffff;
+    }
+
+    &--save {
+      color: $color-e81a50;
+      border: 2px solid $border-e81a50;
+
+      &:hover {
+        background-color: $bgc-e81a50;
+      }
+    }
+
+    &--cancel {
+      color: $color-3d3d3d;
+      border: 2px solid $border-3d3d3d;
+
+      &:hover {
+        background-color: $bgc-3d3d3d;
+      }
+    }
+  }
+}

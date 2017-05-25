@@ -10,6 +10,11 @@
   box-sizing: border-box;
 }
 
+a,
+button {
+  outline: none !important;
+}
+
 html {
   position: relative;
   font-family: $Montserrat-semibold;
@@ -45,7 +50,6 @@ body {
   height: 100%;
   background: $bgc-e81a50;
   background: linear-gradient(to top, $bgc-e81a50 0%, $bgc-3d3d3d 100%);
-  border-radius: 3px;
   box-shadow: 5px 5px 5px 0px $bs-c9c9c9;
   overflow: hidden;
 }
@@ -63,8 +67,9 @@ body {
  ========================= */
 @import "sections/_create-project";
 
-
-
+/* @IMPORT EDIT-PROFILES
+ ========================= */
+@import "sections/_edit-profile";
 
 
 
