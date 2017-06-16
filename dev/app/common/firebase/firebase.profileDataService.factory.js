@@ -21,7 +21,6 @@
         };
 
         function _getList() {
-            debugger;
             return _userArr.$loaded();
         };
 

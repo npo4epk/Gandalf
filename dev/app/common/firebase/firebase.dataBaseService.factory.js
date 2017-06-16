@@ -15,8 +15,15 @@
             _projectsArr = $firebaseArray(_projectsRef);
 
         return  {
-            projectsArr: _projectsArr
+            projectsArr: _projectsArr,
+            getListProject: _getListProject
         };
+
+        function _getListProject() {
+            return _projectsArr.$loaded();
+        };
+
+
 
     };
 

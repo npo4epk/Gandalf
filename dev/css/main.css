@@ -38,6 +38,9 @@
 *:before {
   box-sizing: border-box; }
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important; }
+
 a,
 button {
   outline: none !important; }
@@ -356,9 +359,9 @@ container-project,
     .header-project__item.open .header-project__link {
       color: #3d3d3d; }
       .header-project__item.open .header-project__link:after {
-        top: calc(50% - 12px);
-        border: 4px solid transparent;
-        border-bottom-color: #3d3d3d; }
+        -webkit-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+                transform: rotate(180deg); }
     .header-project__item.open > .header-project-dropdown {
       display: block; }
   .header-project__link {
@@ -383,7 +386,7 @@ container-project,
       top: calc(50% - 8px);
       border: 4px solid transparent;
       border-top-color: #777777;
-      transition: 1s all; }
+      transition: 0.5s all; }
     .header-project__link:hover {
       color: #3d3d3d; }
       .header-project__link:hover:after {
@@ -396,8 +399,8 @@ container-project,
   left: 0;
   min-width: 160px;
   background-color: #ffffff;
-  padding: 11px 0;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 5px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   z-index: 9999; }
   .header-project-dropdown__list {
@@ -408,13 +411,13 @@ container-project,
     position: relative;
     display: block;
     white-space: nowrap; }
-    .header-project-dropdown__item:not(:last-child) {
-      padding-bottom: 21px; }
-      .header-project-dropdown__item:not(:last-child):after {
+    .header-project-dropdown__item:last-child {
+      padding-top: 10px; }
+      .header-project-dropdown__item:last-child:after {
         content: " ";
         display: block;
         position: absolute;
-        bottom: 10px;
+        top: 5px;
         left: 0;
         height: 1px;
         width: 100%;
@@ -427,7 +430,7 @@ container-project,
     line-height: 1.14286rem;
     font-weight: 600;
     display: block;
-    padding: 3px 20px;
+    padding: 5px 20px;
     max-width: 200px;
     color: #3d3d3d;
     text-decoration: none !important;
@@ -531,8 +534,8 @@ container-project,
   right: 0;
   min-width: 160px;
   background-color: #ffffff;
-  padding: 11px 0;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 5px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   z-index: 9999; }
   .header-setting-dropdown__list {
@@ -544,12 +547,12 @@ container-project,
     display: block;
     white-space: nowrap; }
     .header-setting-dropdown__item:not(:last-child) {
-      padding-bottom: 21px; }
+      padding-bottom: 10px; }
       .header-setting-dropdown__item:not(:last-child):after {
         content: " ";
         display: block;
         position: absolute;
-        bottom: 10px;
+        bottom: 5px;
         left: 0;
         height: 1px;
         width: 100%;
@@ -562,7 +565,7 @@ container-project,
     line-height: 1.14286rem;
     font-weight: 600;
     display: block;
-    padding: 3px 20px;
+    padding: 5px 20px;
     max-width: 200px;
     color: #3d3d3d;
     text-decoration: none !important;
@@ -747,7 +750,7 @@ create-project,
   background-color: transparent;
   color: #3d3d3d; }
 
-/* @IMPORT EDIT-PROFILES
+/* @IMPORT DIADLOG
  ========================= */
 /* @IMPORT
  ========================= */
@@ -784,10 +787,31 @@ create-project,
 /* LIST-CLEAR
 	@include list-clear()
  ========================= */
+.ngdialog.ngdialog-theme-default.dialog {
+  padding: 0; }
+
 .ngdialog.ngdialog-theme-default .ngdialog-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  max-width: 450px;
+  max-height: 405px;
   padding: 0;
   border-radius: 0;
   background-color: #fff; }
+
+.dialog-group-value__text {
+  font-family: "Montserrat-regular", "Arial", sans-serif;
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 16px;
+  line-height: 1.14286rem;
+  font-weight: 500; }
 
 .dialog-wrapper {
   padding: 20px;
@@ -797,6 +821,8 @@ create-project,
     display: table; }
   .dialog-wrapper:after {
     clear: both; }
+  .dialog-wrapper:last-child {
+    border-bottom: none; }
 
 .dialog-title__text {
   font-family: "Montserrat-regular", "Arial", sans-serif;
@@ -809,9 +835,12 @@ create-project,
 
 .dialog-group-value__text {
   padding: 6px 12px;
-  outline: none !important;
   background-color: transparent;
-  border: 1px solid #777777; }
+  border: 1px solid #e5e5e5;
+  outline: none !important;
+  transition: 1s all; }
+  .dialog-group-value__text:focus {
+    border-color: #777777; }
 
 .dialog-group {
   display: block;
@@ -841,6 +870,8 @@ create-project,
     width: 75%; }
     .dialog-group-value__text {
       width: 100%; }
+  .dialog-group:last-child {
+    margin-bottom: 0; }
 
 .dialog-button {
   float: right; }

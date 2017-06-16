@@ -3,20 +3,43 @@
 @import "../components/_variables";
 @import "../helpers/_mixins";
 
-.ngdialog.dialog {
-
+.ngdialog.ngdialog-theme-default.dialog {
+  padding: 0;
 }
 
 .ngdialog.ngdialog-theme-default .ngdialog-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  max-width: 450px;
+  max-height: 405px;
   padding: 0;
   border-radius: 0;
   background-color: #fff;
 }
 
+.dialog-group-value__text {
+  font-family: $Montserrat-regular;
+  @include rem(fs, 14, $font-size-mixin);
+  @include rem(lh, 16, $font-size-mixin);
+  font-weight: 500;
+}
+
+
+
 .dialog-wrapper {
   padding: 20px;
   border-bottom: 1px solid $border-e5e5e5;
   @include clearfix();
+
+  &:last-child {
+    border-bottom: none;
+  }
 }
 
 
@@ -35,10 +58,17 @@
 
   &__text {
     padding: 6px 12px;
-    outline: none !important;
     background-color: transparent;
-    border: 1px solid $border-777777;
+    border: 1px solid $border-e5e5e5;
+    outline: none !important;
+    transition: 1s all;
+
+    &:focus {
+      border-color: $border-777777;
+    }
   }
+
+
 }
 
 
@@ -74,7 +104,10 @@
     &__text {
       width: 100%;
     }
+  }
 
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 

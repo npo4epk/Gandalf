@@ -59,9 +59,10 @@ container-project,
       color: $color-3d3d3d;
 
       &:after {
-        top: calc(50% - 12px);
-        border: 4px solid transparent;
-        border-bottom-color: $border-3d3d3d;
+        //top: calc(50% - 12px);
+        //border: 4px solid transparent;
+        //border-bottom-color: $border-3d3d3d;
+        transform: rotate(180deg);
       }
     }
 
@@ -90,7 +91,7 @@ container-project,
       top: calc(50% - 8px);
       border: 4px solid transparent;
       border-top-color: $border-777777;
-      transition: 1s all;
+      transition: 0.5s all;
     }
 
     &:hover {
@@ -110,8 +111,8 @@ container-project,
   left: 0;
   min-width: 160px;
   background-color: $bgc-ffffff;
-  padding: 11px 0;
-  border: 1px solid rgba(0,0,0,0.15);
+  padding: 5px 0;
+  border-top: 1px solid rgba(0,0,0,0.15);
   box-shadow: 0 6px 12px rgba(0,0,0,0.175);
   z-index: 9999;
 
@@ -124,12 +125,12 @@ container-project,
     display: block;
     white-space: nowrap;
 
-    &:not(:last-child) {
-      padding-bottom: 21px;
+    &:last-child {
+      padding-top: 10px;
 
       &:after {
         @include pseudo(block, absolute, ' ');
-        bottom: 10px;
+        top: 5px;
         left: 0;
         height: 1px;
         width: 100%;
@@ -144,7 +145,7 @@ container-project,
     @include rem(lh, 16, $font-size-mixin);
     font-weight: 600;
     display: block;
-    padding: 3px 20px;
+    padding: 5px 20px;
     max-width: 200px;
     color: $color-3d3d3d;
     text-decoration: none !important;
@@ -280,8 +281,8 @@ container-project,
   right: 0;
   min-width: 160px;
   background-color: $bgc-ffffff;
-  padding: 11px 0;
-  border: 1px solid rgba(0,0,0,0.15);
+  padding: 5px 0;
+  border-top: 1px solid rgba(0,0,0,0.15);
   box-shadow: 0 6px 12px rgba(0,0,0,0.175);
   z-index: 9999;
 
@@ -295,11 +296,11 @@ container-project,
     white-space: nowrap;
 
     &:not(:last-child) {
-      padding-bottom: 21px;
+      padding-bottom: 10px;
 
       &:after {
         @include pseudo(block, absolute, ' ');
-        bottom: 10px;
+        bottom: 5px;
         left: 0;
         height: 1px;
         width: 100%;
@@ -314,7 +315,7 @@ container-project,
     @include rem(lh, 16, $font-size-mixin);
     font-weight: 600;
     display: block;
-    padding: 3px 20px;
+    padding: 5px 20px;
     max-width: 200px;
     color: $color-3d3d3d;
     text-decoration: none !important;

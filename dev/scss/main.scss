@@ -10,6 +10,12 @@
   box-sizing: border-box;
 }
 
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+
 a,
 button {
   outline: none !important;
@@ -67,9 +73,9 @@ body {
  ========================= */
 @import "sections/_create-project";
 
-/* @IMPORT EDIT-PROFILES
+/* @IMPORT DIADLOG
  ========================= */
-@import "sections/_edit-profile";
+@import "sections/_dialog";
 
 
 

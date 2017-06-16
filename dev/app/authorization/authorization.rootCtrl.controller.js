@@ -6,9 +6,9 @@
         .module('gandalf.authorization')
         .controller('rootCtrl', rootCtrl);
 
-    rootCtrl.$inject = ['$rootScope', '$state', '$sessionStorage', 'profileAuthService', 'profileDataService'];
+    rootCtrl.$inject = ['$rootScope', '$state', '$sessionStorage', 'profileAuthService', 'profileDataService', 'dataBaseService'];
 
-    function rootCtrl($rootScope, $state, $sessionStorage, profileAuthService, profileDataService) {
+    function rootCtrl($rootScope, $state, $sessionStorage, profileAuthService, profileDataService, dataBaseService) {
 
         var self = this,
             _profileSingUp = {
@@ -42,10 +42,10 @@
         self.profileThank = _profileThank;
 
         function _SingIn(user) {
-            debugger;
+
             profileAuthService.signIn(user)
                 .then(function (token) {
-                    debugger;
+
                     $sessionStorage.authId = token.uid;
                     $sessionStorage.dataId = '';
 
@@ -56,9 +56,28 @@
                             $sessionStorage.dataId = listDataProfile[i].$id;
                         }
                     }
-                    ;
 
-                    $state.go('project.project-id.tables', {projectId: 1});
+                    dataBaseService.getListProject()
+                        .then(function (listProject) {
+                            var createProject = true;
+                            if (listProject.length) {
+                                for (var i = 0; listProject.length > i; i++) {
+                                    if (listProject[i].authId === $sessionStorage.authId && listProject[i].dataId === $sessionStorage.dataId) {
+                                        createProject = false;
+                                        $state.go('project.project-id.tables', {projectId: listProject[i].$id});
+                                        break;
+                                    }
+                                }
+                            }
+                            if (createProject) {
+                                $state.go('project.project-id.create', {projectId: 'create'});
+                            }
+                        })
+                        .catch(function (error) {
+                            debugger;
+                        });
+
+
 
                 })
                 .catch(function (error) {
