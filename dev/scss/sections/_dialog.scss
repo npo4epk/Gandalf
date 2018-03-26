@@ -3,25 +3,145 @@
 @import "../components/_variables";
 @import "../helpers/_mixins";
 
-.ngdialog.ngdialog-theme-default.dialog {
-  padding: 0;
+
+@keyframes ngdialog-flyin {
+  0% {
+    opacity: 0;
+    transform: translateX(-1000px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
 
-.ngdialog.ngdialog-theme-default .ngdialog-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  height: 100%;
-  width: 100%;
-  max-width: 450px;
-  max-height: 405px;
-  padding: 0;
-  border-radius: 0;
-  background-color: #fff;
+@keyframes ngdialog-flyout {
+  0% {
+    opacity: 1;
+    transform: translateX(-1000);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(1500px);
+  }
 }
+
+
+.dialog.ngdialog-closing .ngdialog-content {
+    animation: ngdialog-flyout .5s;
+}
+
+//
+//.dialog {
+//  background-color: rgba(0, 0, 0, 0.4);
+//}
+//
+//.ngdialog-overlay {
+//  //right: 17px;
+//  //overflow: auto;
+//  //bottom: auto;
+//  //left: auto;
+//  //pointer-events: none;
+//  display: none;
+//  background-color: transparent;
+//}
+//
+.dialog .ngdialog-content {
+
+  animation: ngdialog-flyin .5s;
+
+}
+
+.ngdialog-overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+//.dialog-container {
+//
+//  background-color: #fff;
+//  max-width: 600px;
+//}
+.dialog {
+  text-align: center;
+  margin-right: 0;
+}
+
+.dialog:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.ngdialog-content {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  z-index: 10001;
+  background-color: transparent;
+  max-width: 600px;
+  padding: 10px;
+}
+
+.ngdialog-no-overlay {
+  pointer-events: auto !important;
+}
+
+
+.dialog-container {
+  padding-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,.2);
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+}
+
+//.ngdialog {
+//  background: rgba(0, 0, 0, 0.4);
+//}
+//
+//.ngdialog-overlay {
+//  background-color: transparent;
+//  margin-right: 17px;
+//  z-index: 20000;
+//}
+//
+//
+//
+//.ngdialog .ngdialog-content {
+//  display: table;
+//  height: 100%;
+//  width: 100%;
+//  background: transparent;
+//}
+//
+//
+//.dialog-container {
+//  position: relative;
+//  display: table-cell;
+//  vertical-align: middle;
+//  //width: 600px;
+//  background: transparent;
+//  //box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+//  z-index: 30000;
+//
+//  width: inherit;
+//  height: inherit;
+//  margin: 0 auto;
+//
+//}
+//
+//.dialog-wrapper,
+//.dialog-form {
+//  background-color: #fff;
+//  //max-width: 600px;
+//  width: 600px;
+//  height: 400px;
+//  margin: 0 auto;
+//}
+
 
 .dialog-group-value__text {
   font-family: $Montserrat-regular;
@@ -33,13 +153,9 @@
 
 
 .dialog-wrapper {
-  padding: 20px;
-  border-bottom: 1px solid $border-e5e5e5;
+  text-align: left;
+  padding: 20px 20px 0 20px;
   @include clearfix();
-
-  &:last-child {
-    border-bottom: none;
-  }
 }
 
 
@@ -59,7 +175,7 @@
   &__text {
     padding: 6px 12px;
     background-color: transparent;
-    border: 1px solid $border-e5e5e5;
+    border: 2px solid $border-e5e5e5;
     outline: none !important;
     transition: 1s all;
 
@@ -86,7 +202,7 @@
     display: block;
     width: 25%;
     text-align: right;
-    padding-right: 15px;
+    padding: 8px 15px;
 
     &__text {
       font-family: $Montserrat-regular;
@@ -149,3 +265,6 @@
     }
   }
 }
+
+
+

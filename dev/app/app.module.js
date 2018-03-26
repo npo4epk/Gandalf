@@ -10,8 +10,11 @@
 
             // Custom modules.
             'gandalf.firebase',
-            'gandalf.authorization',
-            'gandalf.project'
+            'gandalf.bubbles',
+            'gandalf.preloader',
+            'gandalf.auth',
+            'gandalf.header',
+            'gandalf.core'
 
         ]);
 

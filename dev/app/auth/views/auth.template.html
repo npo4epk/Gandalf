@@ -1,0 +1,57 @@
+
+<section class="auth">
+    <div class="auth-wrapper">
+        <div class="auth-logo">
+            <a class="auth-logo__link"
+               ui-sref="sign-in">
+                <img src="img/logo.svg" class="auth-logo__img" alt="Gandalf" title="Gandalf">
+            </a>
+        </div>
+        <main class="auth-container">
+            <div class="auth-title">
+                <h1 class="auth-title__text"
+                    ng-bind="$ctrl.dataAuth.title">
+                </h1>
+            </div>
+            <form class="auth-form" name="authForm" novalidate="novalidate"
+                  ng-if="$ctrl.$state.current.name !== 'thank'"
+                  ng-submit="authForm.$valid && $ctrl[$ctrl.dataAuth.submitAction]($ctrl.user)">
+                <div class="auth-form__wrapper"
+                     ng-if="$ctrl.$state.current.name === 'sign-up'">
+                    <input class="auth-form__input" type="text" placeholder="Username" required="required" name="username"
+                           ng-model="$ctrl.user.profileName"
+                           ng-minlength="1"
+                           ng-class="{'auth-form__input--error':authForm.username.$invalid && !authForm.username.$pristine}">
+                </div>
+                <div class="auth-form__wrapper">
+                    <input class="auth-form__input" type="email" placeholder="E-mail" required="required" name="email"
+                           ng-model="$ctrl.user.email"
+                           ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,3}$/"
+                           ng-class="{'auth-form__input--error':authForm.email.$invalid && !authForm.email.$pristine}">
+                </div>
+                <div class="auth-form__wrapper">
+                    <input class="auth-form__input" type="password" placeholder="Password" required="required" name="password"
+                           ng-model="$ctrl.user.password"
+                           ng-minlength="8"
+                           ng-class="{'auth-form__input--error':authForm.password.$invalid && !authForm.password.$pristine}">
+                </div>
+                <div class="auth-form__wrapper">
+                    <input class="auth-form__button" type="submit"
+                           value="{{$ctrl.dataAuth.title}}"
+                           ng-disabled="signForm.$invalid">
+                </div>
+            </form>
+            <div class="auth-info">
+                <p class="auth-info__text"
+                   ng-bind="$ctrl.dataAuth.text">
+                </p>
+                <a class="auth-info__link"
+                   ui-sref="{{$ctrl.dataAuth.state}}"
+                   ng-bind="$ctrl.dataAuth.link">
+                </a>
+            </div>
+        </main>
+    </div>
+</section>
+
+<div data-bubbles></div>

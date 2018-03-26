@@ -1,0 +1,64 @@
+
+<section class="dialog-container">
+
+    <div class="dialog-wrapper">
+        <div class="dialog-title">
+            <h1 class="dialog-title__text">Edit profile</h1>
+        </div>
+    </div>
+
+    <form class="dialog-form" novalidate="novalidate" name="dialogForm"
+          ng-submit="dialogForm.$valid && vm.saveDialog(vm.profile)">
+
+        <div class="dialog-wrapper">
+
+
+            <div class="dialog-group">
+                <div class="dialog-group-title">
+                    <label class="dialog-group-title__text" for="username">Username</label>
+                </div>
+                <div class="dialog-group-value">
+                    <input placeholder="User name" class="dialog-group-value__text" type="text" name="username" id="username"
+                           required="required"
+                           ng-minlength="1"
+                           ng-model="vm.profile.username">
+                </div>
+            </div>
+
+            <div class="dialog-group">
+                <div class="dialog-group-title">
+                    <label class="dialog-group-title__text" for="firstname">First name</label>
+                </div>
+                <div class="dialog-group-value">
+                    <input placeholder="First name" class="dialog-group-value__text" type="text" name="firstname" id="firstname"
+                           required="required"
+                           ng-minlength="1"
+                           ng-model="vm.profile.firstname">
+                </div>
+            </div>
+
+            <div class="dialog-group">
+                <div class="dialog-group-title">
+                    <label class="dialog-group-title__text" for="lastname">Last name</label>
+                </div>
+                <div class="dialog-group-value">
+                    <input placeholder="Last name" class="dialog-group-value__text" type="text" name="lastname" id="lastname"
+                           required="required"
+                           ng-minlength="1"
+                           ng-model="vm.profile.lastname">
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="dialog-wrapper">
+            <div class="dialog-button">
+                <input class="dialog-button__btn dialog-button__btn--cancel" type="button" value="Cancel" ng-click="closeThisDialog()">
+                <input class="dialog-button__btn dialog-button__btn--save" type="submit" value="Save">
+            </div>
+        </div>
+    </form>
+
+
+</section>

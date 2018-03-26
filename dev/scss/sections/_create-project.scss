@@ -12,13 +12,8 @@ create-project,
 }
 
 .project-create {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
   height: 100%;
-  width: 100%;
-  min-height: 350px;
+  overflow: auto;
 }
 
 .project-create-title {

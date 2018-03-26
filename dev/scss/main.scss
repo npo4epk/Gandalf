@@ -28,12 +28,24 @@ html {
   height: 100%;
 }
 
-ui-view, div[ui-view]{
+main[ui-view='content'] {
   position: relative;
   display: block;
-  height: 100%;
+  height: calc(100% - 55px);
   overflow: hidden;
 }
+
+main[ui-view='content'].state-auth {
+  height: 100%;
+}
+
+//
+//ui-view, div[ui-view]{
+//  position: relative;
+//  display: block;
+//  height: 100%;
+//  overflow: hidden;
+//}
 
 body {
   position: relative;
@@ -63,11 +75,11 @@ body {
 
 /* @IMPORT PROFILE
  ========================= */
-@import "sections/_profile";
+@import "sections/auth/_auth";
 
 /* @IMPORT HEADER-PROJECT
  ========================= */
-@import "sections/_header-project";
+@import "sections/header/_header";
 
 /* @IMPORT CREATE-PROJECT
  ========================= */
@@ -81,7 +93,7 @@ body {
 
 /* @IMPORT BUBBLES
  ========================= */
-@import "sections/_bubbles";
+@import "sections/bubbles/_bubbles";
 
 /* @IMPORT MEDIA
  ========================= */

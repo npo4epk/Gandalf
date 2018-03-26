@@ -1,0 +1,88 @@
+
+
+<div class="header">
+
+    <div class="header-logo">
+        <a ng-if="$ctrl.getTablesData" ng-repeat="item in $ctrl.getTablesData.data | limitTo: 1" ui-sref="projectId({projectId:item.$id})" class="header-logo__link">
+            <h1 class="header-logo__title">Gandalf</h1>
+            <img src="img/logo.svg" alt="Gandalf" class="header-logo__img">
+        </a>
+        <a ng-if="!$ctrl.getTablesData" ui-sref="create({projectId: 'create'})" class="header-logo__link">
+            <h1 class="header-logo__title">Gandalf</h1>
+            <img src="img/logo.svg" alt="Gandalf" class="header-logo__img">
+        </a>
+    </div>
+
+    <div class="header-project"
+         ng-if="$ctrl.getTablesData && !$ctrl.$state.includes('project-create')">
+        <ul dropdown class="header-project__list">
+            <li class="header-project__item">
+
+                <a href="" class="dropdown-open header-project__link" ng-bind="$ctrl.getTablesData.name"></a>
+
+                <div class=" dropdown header-project-dropdown">
+                    <ul class="header-project-dropdown__list">
+                        <li ng-repeat="item in $ctrl.getTablesData.data" class="header-project-dropdown__item">
+                            <a class="header-project-dropdown__link"
+                               ui-sref="projectId({projectId:item.$id})"
+                               ng-class="{active: $ctrl.getTablesData.id === item.$id}"
+                               ng-bind="item.Info.name"></a>
+                        </li>
+                        <li class="header-project-dropdown__item">
+                            <a class="header-project-dropdown__link"
+                               ui-sref="project-create">+ add new project</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <nav class="header-menu"
+         ng-if="$ctrl.getTablesData && !$ctrl.$state.includes('project-create')">
+        <ul class="header-menu__list">
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link"
+                   ui-sref-active="active"
+                   ui-sref="projectId({projectId:$ctrl.getTablesData.id})">Tables</a>
+            </li>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link"
+                   ui-sref-active="active"
+                   ui-sref="project.project-id.setting({projectId: $ctrl.projectId})">Setting</a>
+            </li>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link"
+                   ui-sref-active="active"
+                   ui-sref="project.project-id.history({projectId: $ctrl.projectId})">History</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="header-setting">
+        <ul dropdown class="header-setting__list ">
+            <li class="header-setting__item">
+                <a href="" class="dropdown-open header-setting__link">
+                    <img src="img/profile.png" alt="Profile" class="header-setting__img">
+                    <span class="header-setting__text" ng-bind="$ctrl.getUserData.profileName"></span>
+                </a>
+                <div class="dropdown header-setting-dropdown">
+                    <ul class="header-setting-dropdown__list">
+                        <li class="header-setting-dropdown__item">
+                            <p class="header-setting-dropdown__name" ng-bind="$ctrl.getUserData.profileName"></p>
+                            <p class="header-setting-dropdown__mail" ng-bind="$ctrl.getUserData.email"></p>
+                        </li>
+                        <li class="header-setting-dropdown__item">
+                            <a href="" class="header-setting-dropdown__link"
+                            ng-click="$ctrl.openDialog()">Edit profile</a>
+                        </li>
+                        <li class="header-setting-dropdown__item">
+                            <a href="" class="header-setting-dropdown__link"
+                               ng-click="$ctrl.signOut($event)">Sign Out</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

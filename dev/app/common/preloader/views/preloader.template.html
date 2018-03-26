@@ -1,0 +1,82 @@
+
+<div class="preloader">
+    <div class="preloader__wrapper">
+        <img class="preloader__img" src="img/logo.svg" alt="logo">
+        <ul class="preloader__list">
+            <li class="preloader__item" ng-repeat="col in [1,2,3,4,5]"></li>
+        </ul>
+    </div>
+</div>
+
+
+<style>
+
+    .preloader {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        overflow: hidden;
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .preloader__list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .preloader__wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .preloader__img {
+        height: 60px;
+        margin-bottom: 20px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .preloader__item{
+        display: inline-block;
+        /*position:absolute;*/
+        width:18px;
+        height:18px;
+        background: #e81a50;
+        opacity:0.5;
+        margin-right: 6px;
+        animation: preloader_4 1s infinite ease-in-out;
+
+    }
+    .preloader__item:nth-child(2){
+        /*left:20px;*/
+        animation-delay: .2s;
+
+    }
+    .preloader__item:nth-child(3){
+        /*left:40px;*/
+        animation-delay: .4s;
+    }
+    .preloader__item:nth-child(4){
+        /*left:60px;*/
+        animation-delay: .6s;
+    }
+    .preloader__item:nth-child(5){
+        /*left:80px;*/
+        animation-delay: .8s;
+        margin-right: 0;
+    }
+
+    @keyframes preloader_4 {
+        0% {opacity: 0.3; transform:translateY(0px);	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);}
+        50% {opacity: 1; transform: translateY(-10px); background: #e81a50;	box-shadow: 0px 20px 3px rgba(0, 0, 0, 0.05);}
+        100%  {opacity: 0.3; transform:translateY(0px);	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);}
+    }
+
+</style>

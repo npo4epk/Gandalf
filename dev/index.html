@@ -19,7 +19,7 @@
 		<!-- build:css css/vendor.min.css -->
 		<link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
 		<link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog.css">
-		<link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog-theme-default.css">
+		<link rel="stylesheet" href="bower_components/AngularJS-Toaster/toaster.css">
 
 		<!-- endbuild -->
 
@@ -42,58 +42,73 @@
 		  <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	    <![endif]-->
 
-		<div ui-view></div>
+		<header ui-view="header"></header>
+		<main ui-view="content" ng-class="{'state-auth': $state.includes('sign-in') || $state.includes('sign-up') || $state.includes('thank')}"></main>
+
+		<toaster-container></toaster-container>
+
+		<div data-preloader ng-show="hhhh"></div>
+		<!--<div class="page-loading">-->
+			<!--<div class="dd">-->
+				<!--<img src="img/logo.svg" alt="">-->
+				<!--<div id="preloader_4">-->
+					<!--<span></span>-->
+					<!--<span></span>-->
+					<!--<span></span>-->
+					<!--<span></span>-->
+					<!--<span></span>-->
+				<!--</div>-->
+			<!--</div>-->
+		<!--</div>-->
+
+
 
 		<!-- build:js js/vendor.min.js -->
 		<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
-
 		<script type="text/javascript" src="bower_components/angular/angular.js"></script>
 		<script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+		<script type="text/javascript" src="bower_components/angular-ui-router/release/resolveService.js"></script>
+		<script type="text/javascript" src="bower_components/angular-ui-router/release/stateEvents.js"></script>
+		<!--<script type="text/javascript" src="bower_components/angular-ui-router/release/ui-router-angularjs.js"></script>-->
 		<script type="text/javascript" src="bower_components/ngstorage/ngStorage.js"></script>
 		<script type="text/javascript" src="bower_components/ng-dialog/js/ngDialog.js"></script>
-
 		<script type="text/javascript" src="bower_components/firebase/firebase.js"></script>
 		<script type="text/javascript" src="bower_components/angularfire/dist/angularfire.js"></script>
+		<script type="text/javascript" src="bower_components/AngularJS-Toaster/toaster.js"></script>
+		<script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
 		<!-- endbuild -->
-
-
 
 		<!-- build:js js/app.min.js -->
-
-		<!-- gandalf -->
 		<script type="text/javascript" src="app/app.module.js"></script>
-		<script type="text/javascript" src="app/app.route.config.js"></script>
-		<script type="text/javascript" src="app/app.stateChange.run.js"></script>
+		<script type="text/javascript" src="app/route.config.js"></script>
+		<script type="text/javascript" src="app/stateChange.run.js"></script>
 
-		<!-- gandalf.firebase -->
 		<script type="text/javascript" src="app/common/firebase/firebase.module.js"></script>
-		<script type="text/javascript" src="app/common/firebase/firebase.initializeService.config.js"></script>
-		<script type="text/javascript" src="app/common/firebase/firebase.profileAuthService.factory.js"></script>
-		<script type="text/javascript" src="app/common/firebase/firebase.profileDataService.factory.js"></script>
-		<script type="text/javascript" src="app/common/firebase/firebase.dataBaseService.factory.js"></script>
+		<script type="text/javascript" src="app/common/firebase/initializeService.config.js"></script>
+		<script type="text/javascript" src="app/common/firebase/authService.factory.js"></script>
+		<script type="text/javascript" src="app/common/firebase/userService.factory.js"></script>
+		<script type="text/javascript" src="app/common/firebase/projectService.factory.js"></script>
 
-		<!-- gandalf.authorization -->
-		<script type="text/javascript" src="app/authorization/authorization.module.js"></script>
-		<script type="text/javascript" src="app/authorization/authorization.route.config.js"></script>
-		<script type="text/javascript" src="app/authorization/authorization.accessService.service.js"></script>
-		<script type="text/javascript" src="app/authorization/authorization.profile.component.js"></script>
-		<script type="text/javascript" src="app/authorization/authorization.profileCtrl.controller.js"></script>
-		<script type="text/javascript" src="app/authorization/authorization.root.component.js"></script>
-		<script type="text/javascript" src="app/authorization/authorization.rootCtrl.controller.js"></script>
+		<script type="text/javascript" src="app/auth/auth.module.js"></script>
+		<script type="text/javascript" src="app/auth/accessService.service.js"></script>
+		<script type="text/javascript" src="app/auth/auth.component.js"></script>
+		<script type="text/javascript" src="app/auth/authCtrl.controller.js"></script>
 
-		<!-- gandalf.core -->
-		<script type="text/javascript" src="app/project/project.module.js"></script>
-		<script type="text/javascript" src="app/project/project.route.config.js"></script>
-		<script type="text/javascript" src="app/project/project.containerProject.component.js"></script>
-		<script type="text/javascript" src="app/project/project.containerProjectCtrl.controller.js"></script>
-		<script type="text/javascript" src="app/project/project.createPoject.component.js"></script>
-		<script type="text/javascript" src="app/project/project.createPojectCtrl.controller.js"></script>
+		<script type="text/javascript" src="app/header/header.module.js"></script>
+		<script type="text/javascript" src="app/header/dropdown.directive.js"></script>
+		<script type="text/javascript" src="app/header/header.component.js"></script>
+		<script type="text/javascript" src="app/header/headerCtrl.controller.js"></script>
 
+		<script type="text/javascript" src="app/common/bubbles/bubbles.module.js"></script>
+		<script type="text/javascript" src="app/common/bubbles/bubbles.component.js"></script>
 
+		<script type="text/javascript" src="app/core/project.module.js"></script>
+		<script type="text/javascript" src="app/core/project.containerProject.component.js"></script>
+		<script type="text/javascript" src="app/core/project.containerProjectCtrl.controller.js"></script>
 
-
+		<script type="text/javascript" src="app/common/preloader/preloader.module.js"></script>
+		<script type="text/javascript" src="app/common/preloader/preloader.component.js"></script>
 		<!-- endbuild -->
-
 
 	</body>
 </html>
